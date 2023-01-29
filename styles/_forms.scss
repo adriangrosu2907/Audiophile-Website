@@ -1,0 +1,41 @@
+@import "base";
+@import "colors";
+@import "spacing";
+@import "typography";
+
+
+label{
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: -0.21px; 
+    color: $black;    
+    
+}
+
+input{
+    height: 56px;
+    width: 309px;
+    border-radius: 8px;
+    border: 1px $gray solid;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 14px; 
+    padding-left: 24px;   
+    
+    
+    &::placeholder{
+        color: gray;
+    }
+
+    // input:focus{
+    //     border: 1px orange solid;
+    //     color: $black;
+    // }
+}
+
+input:focus{
+    border-color: orange;
+    color: $black;
+    background-color: orange;
+}

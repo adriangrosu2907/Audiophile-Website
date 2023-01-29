@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -119,11 +120,134 @@ button {
 .B3 {
   background-color: transparent;
   color: #000000;
+  background-image: url(/Audiophile-Website/assets/shared/desktop/icon-arrow-right.svg);
+  background-repeat: no-repeat;
+  background-position-x: 70%;
+  background-position-y: 50%;
 }
 
 .B3:hover {
   background-color: transparent;
   color: #D87D4A;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+html {
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  color: #000000;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 25px;
+  color: #000000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 56px;
+  line-height: 58px;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 44px;
+  letter-spacing: 1.5px;
+}
+
+h3 {
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: 1.15px;
+}
+
+h4 {
+  font-size: 28px;
+  line-height: 38px;
+  letter-spacing: 2px;
+}
+
+h5 {
+  font-size: 24px;
+  line-height: 33px;
+  letter-spacing: 1.7px;
+}
+
+h6 {
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 1.3px;
+}
+
+.overline {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 10px;
+  color: #FBAF85;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 25px;
+  letter-spacing: 1px;
+  color: #D87D4A;
+  text-transform: uppercase;
+}
+
+label {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: -0.21px;
+  color: #000000;
+}
+
+input {
+  height: 56px;
+  width: 309px;
+  border-radius: 8px;
+  border: 1px #F1F1F1 solid;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  padding-left: 24px;
+}
+input::-moz-placeholder {
+  color: gray;
+}
+input:-ms-input-placeholder {
+  color: gray;
+}
+input::placeholder {
+  color: gray;
+}
+
+input:focus {
+  border-color: orange;
+  color: #000000;
+  background-color: orange;
 }
 
 body {
