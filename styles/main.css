@@ -129,8 +129,10 @@ button {
   color: #000000;
   background-image: url(/Audiophile-Website/assets/shared/desktop/icon-arrow-right.svg);
   background-repeat: no-repeat;
-  background-position-x: 70%;
+  background-position-x: 65%;
   background-position-y: 50%;
+  text-align: left;
+  padding-left: 50px;
 }
 
 .B3:hover {
@@ -229,20 +231,59 @@ h6 {
   text-transform: uppercase;
 }
 
-.radioItem {
+form {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  color: #000000;
+}
+form div {
   width: 309px;
   height: 56px;
 }
+
+.textItem {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.textItem [type=text] {
+  height: 100%;
+  width: 100%;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 2px solid #F1F1F1;
+  padding-left: 24px;
+}
+.textItem [type=text]::-moz-placeholder {
+  color: gray;
+}
+.textItem [type=text]:-ms-input-placeholder {
+  color: gray;
+}
+.textItem [type=text]::placeholder {
+  color: gray;
+}
+.textItem [type=text]:focus {
+  outline: none;
+  border: 2px solid #D87D4A;
+  color: #000000;
+}
+.textItem label {
+  position: absolute;
+  font-size: 12px;
+  letter-spacing: -0.21px;
+}
+
 .radioItem [type=radio] {
   display: none;
 }
 .radioItem + .radioItem {
-  margin-top: 25px;
+  margin-top: 15px;
 }
 .radioItem label {
   display: flex;
-  font-family: "Manrope", sans-serif;
-  font-weight: 700;
   font-size: 14px;
   letter-spacing: -0.25px;
   color: #000000;

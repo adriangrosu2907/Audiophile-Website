@@ -15,10 +15,6 @@
 //         letter-spacing: -0.21px;
 //     }
 
-//     &.radioLabel{
-//         font-size: 14px;
-//         letter-spacing: -0.25px;
-//         padding-left: 16px;
         
         
             
@@ -27,50 +23,79 @@
 // }
 
 // input{
-//     &[type='text']{
-//         height: 56px;
-//         width: 309px;
-//         border-radius: 8px;
-//         border: 2px solid $gray;
-//         font-family: 'Manrope', sans-serif;
-//         font-weight: 700;
-//         font-size: 14px; 
-//         padding-left: 24px;
-//         }
-                
-//         &::placeholder{
-//             color: $darkGray;
-//         }
-
-//         &:focus{
-//             outline: none;
-//             border: 2px solid $orange;
-//             color: $black;
-
-//         // add style for Text field error 
-//             }
-//     &[type='radio']{
-//         vertical-align: middle;
-//         margin-left: 16px;
-//         accent-color: $orange;
+//    
+          
+//     
 //     }
 // }
 
+form {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    color: $black;
+    
+
+    & div {
+        //to be modififed later as needed
+        width: 309px;
+        height: 56px;
+    }
+}
+
+.textItem {
+    //margin to be deleted
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    & [type="text"]{
+        // position: relative;
+        height: 100%;
+        width: 100%;        
+        font-family: inherit;
+        font-weight: inherit;
+        color: inherit;
+        font-size: 14px;
+
+        border-radius: 8px;
+        border: 2px solid $gray;
+        padding-left: 24px;
+    
+
+        &::placeholder{
+            color: $darkGray;
+        }
+        &:focus{
+            outline: none;
+            border: 2px solid $orange;
+            color: $black;
+            }
+        // add style for Text field error 
+    }
+
+    & label {
+        position: absolute;
+        font-size: 12px;
+        letter-spacing: -0.21px;     
+
+    }
+
+}
+
+
+
 .radioItem {
-    width: 309px;
-    height: 56px;
+    // width: 309px;
+    // height: 56px;
     
     & [type="radio"]{
         display: none;    
     }
     & + .radioItem {
-        margin-top: 25px;
+        margin-top: 15px;
     }
     & label{
         //initial setup was with block
         display: flex;
-        font-family: 'Manrope', sans-serif;
-        font-weight: 700;
         font-size: 14px;
         letter-spacing: -0.25px;
         color: $black;
