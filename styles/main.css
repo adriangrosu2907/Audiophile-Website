@@ -6,6 +6,12 @@
 
 body {
   margin: 0;
+  background-color: #FFFFFF;
+}
+
+input {
+  padding: 0;
+  margin: 0;
 }
 
 html {
@@ -94,6 +100,7 @@ button {
   letter-spacing: 1px;
   text-transform: uppercase;
   border: 0px;
+  padding: 0;
 }
 
 .B1 {
@@ -136,6 +143,12 @@ button {
 }
 
 body {
+  margin: 0;
+  background-color: #FFFFFF;
+}
+
+input {
+  padding: 0;
   margin: 0;
 }
 
@@ -216,40 +229,60 @@ h6 {
   text-transform: uppercase;
 }
 
-label {
-  font-family: "Manrope", sans-serif;
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: -0.21px;
-  color: #000000;
-}
-
-input {
-  height: 56px;
+.radioItem {
   width: 309px;
-  border-radius: 8px;
-  border: 1px #F1F1F1 solid;
+  height: 56px;
+}
+.radioItem [type=radio] {
+  display: none;
+}
+.radioItem + .radioItem {
+  margin-top: 25px;
+}
+.radioItem label {
+  display: flex;
   font-family: "Manrope", sans-serif;
   font-weight: 700;
   font-size: 14px;
-  padding-left: 24px;
-}
-input::-moz-placeholder {
-  color: gray;
-}
-input:-ms-input-placeholder {
-  color: gray;
-}
-input::placeholder {
-  color: gray;
-}
-
-input:focus {
-  border-color: orange;
+  letter-spacing: -0.25px;
   color: #000000;
-  background-color: orange;
+  height: 100%;
+  align-items: center;
+  padding-left: 56px;
+  background: #FFFFFF;
+  border: 2px solid #F1F1F1;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
 }
-
-body {
-  background-color: #FFFFFF;
+.radioItem label::after, .radioItem label::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+.radioItem label::after {
+  height: 20px;
+  width: 20px;
+  border: 2px solid #F1F1F1;
+  left: 16px;
+  top: calc(50% - 12px);
+}
+.radioItem label::before {
+  background: #D87D4A;
+  height: 10px;
+  width: 10px;
+  left: 23px;
+  top: calc(50% - 5px);
+  visibility: hidden;
+}
+.radioItem [type=radio]:checked ~ label {
+  border-color: #D87D4A;
+}
+.radioItem [type=radio]:checked ~ label::before {
+  opacity: 1;
+  visibility: visible;
+}
+.radioItem [type=radio]:hover ~ label {
+  border-color: #D87D4A;
 }/*# sourceMappingURL=main.css.map */
