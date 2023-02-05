@@ -5,3 +5,103 @@
 @import "buttons";
 @import "forms";
 
+.hero{
+    // display: flex;
+    // justify-content: center;
+    background-image: url("../assets/home/desktop/image-hero.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0 0 8px 8px;
+    height: 728px;
+    width: 1440px;    
+    margin: auto;   
+
+    .container{        
+        height: 100%;
+        
+    }
+
+    header{
+        display: flex;
+        justify-content: space-between;
+        padding: 35px 0px;
+        // margin-top: 35px;
+        border-bottom: 0.5px solid $darkGray;
+    }
+
+    nav {
+               
+        ul{
+        list-style-type: none;
+        
+        }
+
+        li {
+            display: inline;
+            
+        }
+
+        li:not(:last-child) {
+            margin-right: 35px;
+            
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    .B4{
+        background-color: transparent;
+        border: none;
+    }
+
+    .newProduct{
+        position: absolute;
+        top: 225px;
+        width: 398px;
+        height: 346px;
+        
+        h1 {
+            color: white;
+            padding: 25px 0px;
+        }
+
+        p{
+            color: $darkGray;
+            width: 90%;
+        }
+
+        .B1{
+            position: absolute;
+            bottom: 0;
+        }
+
+        
+    }
+}
+
+.categories{
+    
+    .container{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 1440px;
+        height: 284px;
+    }
+    
+    .category{
+        
+        width: 350px;
+        height: 204px;
+        background-color: $gray;
+        border-radius: 8px;
+
+        img{
+            height: 160px;
+        }
+
+    }
+    
+}
