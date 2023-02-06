@@ -1,6 +1,6 @@
 @import "colors";
 
-.B1, .B2, .B3 {
+.B1, .B2, .B3, .B4 {
     width: 160px;
     height: 48px;
     font-family: 'Manrope', sans-serif;
@@ -60,4 +60,18 @@
 .B3:hover{
     background-color: transparent;
     color: $orange;
+}
+
+.B4{
+    background-color: $black;
+    color: $white;
+    border: 0 px;
+
+}
+
+.B4:hover{
+    
+    background-color: $white;
+    color: $black;
+    border: 1px black solid;  
 }
