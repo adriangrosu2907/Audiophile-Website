@@ -131,7 +131,7 @@ h6 {
 }
 
 .B2 {
-  background-color: #FFFFFF;
+  background-color: transparent;
   color: #000000;
   border: 1px black solid;
 }
@@ -368,16 +368,22 @@ form div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 48px;
+  margin-top: 168px;
   max-width: 1440px;
 }
 .products .container .productZX9 {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: start;
+  padding: 115px 95px 0 140px;
   border-radius: 8px;
   background-color: #D87D4A;
   background-image: url("../assets/home/desktop/pattern-circles.svg");
+  background-position: -145px -30px;
   background-repeat: no-repeat;
+  overflow: hidden;
   width: 100%;
   height: 560px;
 }
@@ -385,9 +391,57 @@ form div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-top: 20px;
   width: 349px;
   height: 303px;
+  color: #FFFFFF;
+}
+.products .container .productZX9 .productDescription p {
+  font-weight: 300;
+  opacity: 75%;
+  letter-spacing: 0.75px;
+  font-size: 14px;
 }
 .products .container .productZX9 img[alt=ZX9] {
-  height: 493px;
+  width: 380px;
+}
+.products .container .productZX7 {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 320px;
+}
+.products .container .productZX7 img {
+  border-radius: 8px;
+  position: absolute;
+}
+.products .container .productZX7 .productDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 95px;
+  width: 204px;
+  height: 118px;
+  z-index: 1;
+}
+.products .container .productYX1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 320px;
+}
+.products .container .productYX1 img {
+  border-radius: 8px;
+}
+.products .container .productYX1 .productDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 247px;
+  height: 118px;
+}
+.products .container .productYX1 .productDescription .background {
+  background-color: #F1F1F1;
+  width: 540px;
+  height: 100%;
 }/*# sourceMappingURL=main.css.map */
