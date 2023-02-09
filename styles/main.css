@@ -5,12 +5,10 @@
   padding: 0;
 }
 
-body {
-  min-height: 100vh;
-}
-
-.container {
+.customContainer {
+  max-width: 1440px;
   padding: 0px 165px;
+  margin: auto;
 }
 
 html {
@@ -198,9 +196,6 @@ form div {
 .textItem [type=text]::-moz-placeholder {
   color: gray;
 }
-.textItem [type=text]:-ms-input-placeholder {
-  color: gray;
-}
 .textItem [type=text]::placeholder {
   color: gray;
 }
@@ -272,15 +267,11 @@ form div {
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 0 0 8px 8px;
-  height: 728px;
-  width: 1440px;
-  margin: auto;
+  margin-bottom: 120px;
 }
-.hero .container {
-  height: 100%;
-  margin: auto;
+.hero .customContainer {
+  height: 728px;
   width: 100%;
-  max-width: 1440px;
 }
 .hero header {
   display: flex;
@@ -324,15 +315,11 @@ form div {
 }
 
 .categories {
-  width: 1440px;
-  height: 284px;
-  margin: auto;
+  margin-bottom: 168px;
 }
-.categories .container {
+.categories .customContainer {
   display: flex;
   justify-content: space-between;
-  margin-top: 120px;
-  max-width: 1440px;
   height: 284px;
 }
 .categories .category {
@@ -361,18 +348,15 @@ form div {
 }
 
 .products {
-  width: 1440px;
-  margin: auto;
+  margin-bottom: 200px;
 }
-.products .container {
+.products .customContainer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 48px;
-  margin-top: 168px;
-  max-width: 1440px;
 }
-.products .container .productZX9 {
+.products .customContainer .productZX9 {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -387,7 +371,7 @@ form div {
   width: 100%;
   height: 560px;
 }
-.products .container .productZX9 .productDescription {
+.products .customContainer .productZX9 .productDescription {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -396,26 +380,26 @@ form div {
   height: 303px;
   color: #FFFFFF;
 }
-.products .container .productZX9 .productDescription p {
+.products .customContainer .productZX9 .productDescription p {
   font-weight: 300;
   opacity: 75%;
   letter-spacing: 0.75px;
   font-size: 14px;
 }
-.products .container .productZX9 img[alt=ZX9] {
+.products .customContainer .productZX9 img[alt=ZX9] {
   width: 380px;
 }
-.products .container .productZX7 {
+.products .customContainer .productZX7 {
   display: flex;
   justify-content: left;
   align-items: center;
   height: 320px;
 }
-.products .container .productZX7 img {
+.products .customContainer .productZX7 img {
   border-radius: 8px;
   position: absolute;
 }
-.products .container .productZX7 .productDescription {
+.products .customContainer .productZX7 .productDescription {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -424,24 +408,52 @@ form div {
   height: 118px;
   z-index: 1;
 }
-.products .container .productYX1 {
+.products .customContainer .productYX1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 320px;
+  background-color: #F1F1F1;
+  background-size: 320px, 540px, cover;
+  background-position-x: right;
 }
-.products .container .productYX1 img {
+.products .customContainer .productYX1 img {
   border-radius: 8px;
 }
-.products .container .productYX1 .productDescription {
+.products .customContainer .productYX1 .productDescription {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 247px;
   height: 118px;
 }
-.products .container .productYX1 .productDescription .background {
-  background-color: #F1F1F1;
-  width: 540px;
-  height: 100%;
+
+.about {
+  margin-bottom: 200px;
+}
+.about .customContainer {
+  display: flex;
+  height: 588px;
+  background-color: aqua;
+}
+
+.footer .customContainer {
+  height: 365px;
+  background-color: black;
+}
+.footer header {
+  display: flex;
+  justify-content: space-between;
+  padding: 35px 0px;
+}
+.footer nav ul {
+  list-style-type: none;
+}
+.footer nav li {
+  display: inline;
+}
+.footer nav li:not(:last-child) {
+  margin-right: 35px;
+}
+.footer nav a {
+  text-decoration: none;
 }/*# sourceMappingURL=main.css.map */

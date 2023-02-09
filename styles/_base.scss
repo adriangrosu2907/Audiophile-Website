@@ -8,14 +8,8 @@
     padding: 0;
 }
 
-body{
-    // // width: 100%;
-    min-height: 100vh;  
-    // margin: 0 auto;
-    
-    
-}
-
-.container{
+.customContainer{
+    max-width: 1440px;
     padding: 0px $container-spacing;
+    margin: auto;
 }
