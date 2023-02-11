@@ -274,51 +274,55 @@ form div {
 .hero .customContainer {
   height: 728px;
 }
-.hero header {
-  display: flex;
-  justify-content: space-between;
-  padding: 35px 0px;
-  border-bottom: 0.5px solid gray;
-}
-.hero nav ul {
-  list-style-type: none;
-}
-.hero nav li {
-  display: inline;
-}
-.hero nav li:not(:last-child) {
-  margin-right: 35px;
-}
-.hero nav a {
-  text-decoration: none;
-}
-.hero nav a:hover {
-  color: #D87D4A;
-}
-.hero .B5 {
-  background-color: transparent;
-  border: none;
-}
-.hero .B5:hover {
-  filter: invert(54%) sepia(45%) saturate(593%) hue-rotate(337deg) brightness(94%) contrast(94%);
-}
-.hero .newProduct {
+
+.newProduct {
   position: absolute;
   top: 225px;
   width: 398px;
   height: 346px;
 }
-.hero .newProduct h1 {
+.newProduct h1 {
   color: white;
   padding: 25px 0px;
 }
-.hero .newProduct p {
+.newProduct p {
   color: gray;
   width: 90%;
 }
-.hero .newProduct .B1 {
+.newProduct .B1 {
   position: absolute;
   bottom: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 35px 0px;
+  border-bottom: 0.5px solid gray;
+}
+
+nav ul {
+  list-style-type: none;
+}
+nav li {
+  display: inline;
+}
+nav li:not(:last-child) {
+  margin-right: 35px;
+}
+nav a {
+  text-decoration: none;
+}
+nav a:hover {
+  color: #D87D4A;
+}
+
+.B5 {
+  background-color: transparent;
+  border: none;
+}
+.B5:hover {
+  filter: invert(54%) sepia(45%) saturate(593%) hue-rotate(337deg) brightness(94%) contrast(94%);
 }
 
 .categories {
@@ -329,7 +333,8 @@ form div {
   justify-content: space-between;
   height: 284px;
 }
-.categories .category {
+
+.category {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -337,7 +342,7 @@ form div {
   position: relative;
   width: 350px;
 }
-.categories .category .background {
+.category .background {
   width: 100%;
   height: 204px;
   background-color: #F1F1F1;
@@ -346,10 +351,10 @@ form div {
   top: 80px;
   z-index: -1;
 }
-.categories .category img {
+.category img {
   width: 65%;
 }
-.categories .category h6 {
+.category h6 {
   position: absolute;
   top: 200px;
 }
@@ -363,7 +368,8 @@ form div {
   justify-content: space-between;
   gap: 48px;
 }
-.products .customContainer .productZX9 {
+
+.productZX9 {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -377,7 +383,7 @@ form div {
   overflow: hidden;
   height: 560px;
 }
-.products .customContainer .productZX9 .productDescription {
+.productZX9 .productDescription {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -386,26 +392,27 @@ form div {
   height: 303px;
   color: #FFFFFF;
 }
-.products .customContainer .productZX9 .productDescription p {
+.productZX9 .productDescription p {
   font-weight: 300;
   opacity: 75%;
   letter-spacing: 0.75px;
   font-size: 14px;
 }
-.products .customContainer .productZX9 img[alt=ZX9] {
+.productZX9 img[alt=ZX9] {
   width: 380px;
 }
-.products .customContainer .productZX7 {
+
+.productZX7 {
   display: flex;
   justify-content: left;
   align-items: center;
   height: 320px;
 }
-.products .customContainer .productZX7 img {
+.productZX7 img {
   border-radius: 8px;
   position: absolute;
 }
-.products .customContainer .productZX7 .productDescription {
+.productZX7 .productDescription {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -414,16 +421,17 @@ form div {
   height: 100%;
   z-index: 1;
 }
-.products .customContainer .productYX1 {
+
+.productYX1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 320px;
 }
-.products .customContainer .productYX1 img {
+.productYX1 img {
   border-radius: 8px;
 }
-.products .customContainer .productYX1 .productDescription {
+.productYX1 .productDescription {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -443,19 +451,19 @@ form div {
   gap: 125px;
   height: 100%;
 }
-.about .customContainer .productDescription {
+.about .aboutDescription {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 146px 0;
 }
-.about .customContainer .productDescription .highlight {
+.about .aboutDescription .highlight {
   color: #D87D4A;
 }
-.about .customContainer .productDescription p {
+.about .aboutDescription p {
   color: gray;
 }
-.about .customContainer img {
+.about img {
   border-radius: 8px;
 }
 
@@ -473,50 +481,52 @@ form div {
   background-color: #D87D4A;
   position: absolute;
 }
-.footer .customContainer footer {
+.footer .customContainer p {
+  color: gray;
+  padding-top: 56px;
+}
+
+footer {
   display: flex;
   justify-content: space-between;
   padding-top: 75px;
 }
-.footer .customContainer footer nav ul {
+footer nav ul {
   list-style-type: none;
 }
-.footer .customContainer footer nav li {
+footer nav li {
   display: inline;
 }
-.footer .customContainer footer nav li:not(:last-child) {
+footer nav li:not(:last-child) {
   margin-right: 35px;
 }
-.footer .customContainer footer nav a {
+footer nav a {
   text-decoration: none;
 }
-.footer .customContainer footer nav a:hover {
+footer nav a:hover {
   color: #D87D4A;
 }
-.footer .customContainer .footerDescription {
+
+.footerDescription {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   padding-top: 36px;
 }
-.footer .customContainer .footerDescription p {
+.footerDescription p {
   width: 540px;
   color: gray;
   padding: 0;
 }
-.footer .customContainer .footerDescription .social ul {
+.footerDescription .social ul {
   display: flex;
   flex-direction: row;
   gap: 16px;
   list-style-type: none;
 }
-.footer .customContainer .footerDescription .social ul img:hover {
+.footerDescription .social ul img:hover {
   filter: invert(54%) sepia(45%) saturate(593%) hue-rotate(337deg) brightness(94%) contrast(94%);
 }
-.footer .customContainer .footerDescription .social img {
+.footerDescription .social img {
   height: 24px;
-}
-.footer .customContainer p {
-  color: gray;
-  padding-top: 56px;
 }/*# sourceMappingURL=main.css.map */
