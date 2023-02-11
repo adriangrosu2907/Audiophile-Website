@@ -267,6 +267,8 @@ form div {
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 0 0 8px 8px;
+  max-width: 1440px;
+  margin: 0 auto;
   margin-bottom: 120px;
 }
 .hero .customContainer {
@@ -290,9 +292,15 @@ form div {
 .hero nav a {
   text-decoration: none;
 }
-.hero .B4 {
+.hero nav a:hover {
+  color: #D87D4A;
+}
+.hero .B5 {
   background-color: transparent;
   border: none;
+}
+.hero .B5:hover {
+  filter: invert(54%) sepia(45%) saturate(593%) hue-rotate(337deg) brightness(94%) contrast(94%);
 }
 .hero .newProduct {
   position: absolute;
@@ -431,28 +439,84 @@ form div {
 }
 .about .customContainer {
   display: flex;
-  height: 588px;
-  background-color: aqua;
+  justify-content: space-between;
+  gap: 125px;
+  height: 100%;
+}
+.about .customContainer .productDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 146px 0;
+}
+.about .customContainer .productDescription .highlight {
+  color: #D87D4A;
+}
+.about .customContainer .productDescription p {
+  color: gray;
+}
+.about .customContainer img {
+  border-radius: 8px;
 }
 
 .footer .customContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   height: 365px;
   background-color: black;
+  border-radius: 8px 8px 0 0;
 }
-.footer header {
+.footer .customContainer .line {
+  width: 100px;
+  height: 5px;
+  background-color: #D87D4A;
+  position: absolute;
+}
+.footer .customContainer footer {
   display: flex;
   justify-content: space-between;
-  padding: 35px 0px;
+  padding-top: 75px;
 }
-.footer nav ul {
+.footer .customContainer footer nav ul {
   list-style-type: none;
 }
-.footer nav li {
+.footer .customContainer footer nav li {
   display: inline;
 }
-.footer nav li:not(:last-child) {
+.footer .customContainer footer nav li:not(:last-child) {
   margin-right: 35px;
 }
-.footer nav a {
+.footer .customContainer footer nav a {
   text-decoration: none;
+}
+.footer .customContainer footer nav a:hover {
+  color: #D87D4A;
+}
+.footer .customContainer .footerDescription {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 36px;
+}
+.footer .customContainer .footerDescription p {
+  width: 540px;
+  color: gray;
+  padding: 0;
+}
+.footer .customContainer .footerDescription .social ul {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  list-style-type: none;
+}
+.footer .customContainer .footerDescription .social ul img:hover {
+  filter: invert(54%) sepia(45%) saturate(593%) hue-rotate(337deg) brightness(94%) contrast(94%);
+}
+.footer .customContainer .footerDescription .social img {
+  height: 24px;
+}
+.footer .customContainer p {
+  color: gray;
+  padding-top: 56px;
 }/*# sourceMappingURL=main.css.map */
