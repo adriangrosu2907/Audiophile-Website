@@ -8,7 +8,7 @@
 .customContainer {
   max-width: 1440px;
   padding: 0px 165px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 html {
@@ -271,7 +271,6 @@ form div {
 }
 .hero .customContainer {
   height: 728px;
-  width: 100%;
 }
 .hero header {
   display: flex;
@@ -368,14 +367,13 @@ form div {
   background-position: -145px -30px;
   background-repeat: no-repeat;
   overflow: hidden;
-  width: 100%;
   height: 560px;
 }
 .products .customContainer .productZX9 .productDescription {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 20px;
+  padding-top: 20px;
   width: 349px;
   height: 303px;
   color: #FFFFFF;
@@ -403,9 +401,9 @@ form div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-left: 95px;
-  width: 204px;
-  height: 118px;
+  padding: 101px 95px;
+  width: 100%;
+  height: 100%;
   z-index: 1;
 }
 .products .customContainer .productYX1 {
@@ -413,9 +411,6 @@ form div {
   justify-content: space-between;
   align-items: center;
   height: 320px;
-  background-color: #F1F1F1;
-  background-size: 320px, 540px, cover;
-  background-position-x: right;
 }
 .products .customContainer .productYX1 img {
   border-radius: 8px;
@@ -424,7 +419,11 @@ form div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 118px;
+  padding: 101px 95px;
+  background-color: #F1F1F1;
+  border-radius: 8px;
+  height: 100%;
+  width: 540px;
 }
 
 .about {
