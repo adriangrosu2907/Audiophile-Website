@@ -168,6 +168,19 @@ h6 {
   border: 1px black solid;
 }
 
+.B6 {
+  width: 120px;
+  height: 48px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 0px;
+  padding: 0;
+  background-color: #F1F1F1;
+}
+
 form {
   font-family: "Manrope", sans-serif;
   font-weight: 700;
@@ -534,13 +547,13 @@ footer nav a:hover {
 
 .categoryHeader {
   margin-bottom: 160px;
-  background-color: #000000;
 }
 .categoryHeader .customContainer {
   display: flex;
   flex-direction: column;
   gap: 97px;
   height: 336px;
+  background-color: #000000;
 }
 .categoryHeader .customContainer h2 {
   color: #FFFFFF;
@@ -582,10 +595,10 @@ footer nav a:hover {
 
 .productHeader {
   margin-bottom: 160px;
-  background-color: #000000;
 }
 .productHeader .customContainer {
   height: 97px;
+  background-color: #000000;
 }
 .productHeader header {
   padding-bottom: 0;
@@ -594,6 +607,11 @@ footer nav a:hover {
 
 .productSection {
   margin-bottom: 160px;
+}
+.productSection .customContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 160px;
 }
 
 .productDetails {
@@ -621,4 +639,67 @@ footer nav a:hover {
 }
 .productDetails .productDescription h6 {
   padding-bottom: 47px;
+}
+
+.productFeatures {
+  display: flex;
+  height: 318px;
+  gap: 125px;
+}
+.productFeatures p {
+  color: gray;
+}
+.productFeatures h3 {
+  padding-bottom: 32px;
+}
+.productFeatures .features {
+  width: 635px;
+}
+.productFeatures .inthebox {
+  width: 350px;
+}
+.productFeatures .highlight {
+  color: #D87D4A;
+}
+
+.productImages {
+  display: flex;
+  height: 592px;
+  gap: 30px;
+}
+.productImages img {
+  border-radius: 8px;
+}
+.productImages .bundleImages {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.similarProducts {
+  margin-bottom: 160px;
+}
+.similarProducts .customContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 571px;
+}
+
+.similarBundle {
+  display: flex;
+  gap: 30px;
+}
+.similarBundle .similarProduct {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 350px;
+  height: 471px;
+}
+.similarBundle .similarProduct img {
+  width: 100%;
+  border-radius: 8px;
 }/*# sourceMappingURL=main.css.map */

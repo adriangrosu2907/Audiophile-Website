@@ -358,13 +358,13 @@ footer {
 
 .categoryHeader {
     margin-bottom: $marginBottom;
-    background-color: $black;
 
     .customContainer {
         display: flex;
         flex-direction: column;
         gap: 97px;
         height: 336px;
+        background-color: $black;
 
         h2 {
             color: $white;
@@ -422,10 +422,10 @@ footer {
 
 .productHeader {
     margin-bottom: $marginBottom;
-    background-color: $black;
 
     .customContainer {
         height: 97px;
+        background-color: $black;
     }
 
     header {
@@ -434,12 +434,19 @@ footer {
     }
 }
 
-// General - Product details - Styles
+// General - Product Section - Styles
 
 .productSection {
     margin-bottom: $marginBottom;
+
+    .customContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 160px;
+    }
 }
 
+// General - Product Details - Styles
 .productDetails {
     display: flex;
     justify-content: space-between;
@@ -467,8 +474,90 @@ footer {
             padding: 32px 0;
         }
 
-        h6{
+        h6 {
             padding-bottom: 47px;
         }
+    }
+}
+
+// General - Product Features - Styles
+.productFeatures {
+    display: flex;
+    height: 318px;
+    gap: 125px;
+
+    p {
+        color: $darkGray;
+    }
+
+    h3 {
+        padding-bottom: 32px;
+    }
+
+    .features {
+        width: 635px;
+    }
+
+    .inthebox {
+        width: 350px;
+    }
+
+    .highlight {
+        color: $orange;
+    }
+
+}
+
+// General - Product Images - Styles
+.productImages {
+    display: flex;
+    height: 592px;
+    gap: 30px;
+
+    img {
+        border-radius: $borderRadius;
+    }
+
+    .bundleImages {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+}
+
+// General - Similar products Section - Styles
+
+.similarProducts {
+    margin-bottom: $marginBottom;
+
+    .customContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 571px;
+
+    }
+
+}
+
+.similarBundle {
+    display: flex;
+    gap: 30px;
+
+    .similarProduct {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 350px;
+        height: 471px;
+
+        img {
+            width: 100%;
+            border-radius: $borderRadius;
+        }
+
     }
 }
