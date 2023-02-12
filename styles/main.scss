@@ -8,7 +8,7 @@
 // Home page styles
 
 //Homepage - Hero styles
-.hero{
+.hero {
     background-image: url("../assets/home/desktop/image-hero.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -16,74 +16,78 @@
     max-width: 1440px;
     margin: 0 auto;
     margin-bottom: 120px;
-       
-    .customContainer{        
-        height: 728px;   
+
+    .customContainer {
+        height: 728px;
         // width: 100%;        
     }
 }
+
 //Homepage - Hero - newProduct styles
-.newProduct{
+.newProduct {
     position: absolute;
     top: 225px;
     width: 398px;
     height: 346px;
-    
+
     h1 {
         color: white;
         padding: 25px 0px;
     }
 
-    p{
+    p {
         color: $darkGray;
         width: 90%;
     }
 
-    .B1{
+    .B1 {
         position: absolute;
         bottom: 0;
     }
 
-    
+
 }
+
 //General - Header settings
-header{
+header {
     display: flex;
     justify-content: space-between;
-    padding: 35px 0px;
+    padding-top: 32px;
+    padding-bottom: 36px;
     border-bottom: 0.5px solid $darkGray;
 }
 
 nav {
-               
-    ul{
-    list-style-type: none;
-    
+
+    ul {
+        list-style-type: none;
+
     }
 
     li {
         display: inline;
-        
+
     }
 
     li:not(:last-child) {
         margin-right: 35px;
-        
+
     }
 
     a {
         text-decoration: none;
-        &:hover{
+
+        &:hover {
             color: $orange;
         }
     }
 }
 
-.B5{
+.B5 {
     background-color: transparent;
     border: none;
 
-    &:hover{
+    &:hover {
         filter: invert(54%) sepia(45%) saturate(593%) hue-rotate(337deg) brightness(94%) contrast(94%);
     }
 }
@@ -92,24 +96,24 @@ nav {
 // General - Categories section
 
 .categories {
-        margin-bottom: 168px;
-         
-    .customContainer{
+    margin-bottom: $marginBottom;
+
+    .customContainer {
         display: flex;
         justify-content: space-between;
-        height: 284px;  
-    }    
+        height: 284px;
+    }
 }
 
-.category{
+.category {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
     position: relative;
-    width: 350px;  
+    width: 350px;
 
-    .background{
+    .background {
         width: 100%;
         height: 204px;
         background-color: $gray;
@@ -119,7 +123,7 @@ nav {
         z-index: -1;
     }
 
-    img{
+    img {
         width: 65%;
         // position: absolute;
     }
@@ -130,11 +134,12 @@ nav {
     }
 
 }
+
 // Homepage - Products section + products styles
-.products{
+.products {
     margin-bottom: 200px;
 
-    .customContainer{
+    .customContainer {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -145,7 +150,7 @@ nav {
 .productZX9 {
     display: flex;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: start;
     padding: 115px 95px 0 140px;
     // position: relative;
@@ -157,7 +162,7 @@ nav {
     overflow: hidden;
     height: 560px;
 
-    .productDescription{
+    .productDescription {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -166,7 +171,7 @@ nav {
         height: 303px;
         color: $white;
 
-        p{
+        p {
             font-weight: 300;
             opacity: 75%;
             letter-spacing: 0.75px;
@@ -174,23 +179,23 @@ nav {
         }
     }
 
-    img[alt="ZX9"]{
+    img[alt="ZX9"] {
         width: 380px;
     }
 }
 
-.productZX7{
+.productZX7 {
     display: flex;
     justify-content: left;
     align-items: center;
     height: 320px;
-    
-    img{
+
+    img {
         border-radius: $borderRadius;
         position: absolute;
     }
-    
-    .productDescription{
+
+    .productDescription {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -198,7 +203,7 @@ nav {
         width: 100%;
         height: 100%;
         z-index: 1;
-        
+
     }
 }
 
@@ -206,13 +211,13 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 320px;  
-               
-    img{
+    height: 320px;
+
+    img {
         border-radius: $borderRadius;
     }
 
-    .productDescription{
+    .productDescription {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -220,45 +225,46 @@ nav {
         background-color: $gray;
         border-radius: $borderRadius;
         height: 100%;
-        width: 540px;                
+        width: 540px;
     }
-  
+
 }
 
 //General - About section
 
 .about {
-    margin-bottom: 200px;
+    margin-bottom: $marginBottom;
 
-    .customContainer{
+    .customContainer {
         display: flex;
-        justify-content: space-between;  
+        justify-content: space-between;
         gap: 125px;
         height: 100%;
     }
 
-    .aboutDescription{
+    .aboutDescription {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding: 146px 0;
 
-        .highlight{
+        .highlight {
             color: $orange;
         }
-        
-        p{
+
+        p {
             color: $darkGray;
         }
     }
-    img{
+
+    img {
         border-radius: $borderRadius;
     }
 }
 
 //General - Footer section styles
 .footer {
-    .customContainer{
+    .customContainer {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -266,7 +272,7 @@ nav {
         background-color: black;
         border-radius: $borderRadius $borderRadius 0 0;
 
-        .line{
+        .line {
             width: 100px;
             height: 5px;
             background-color: $orange;
@@ -280,39 +286,40 @@ nav {
     }
 }
 
-footer{
+footer {
     display: flex;
     justify-content: space-between;
     padding-top: 75px;
 
     nav {
-       
-        ul{
+
+        ul {
             list-style-type: none;
-        
+
         }
 
         li {
             display: inline;
-            
+
         }
 
         li:not(:last-child) {
             margin-right: 35px;
-            
+
         }
 
         a {
             text-decoration: none;
 
-            &:hover{
+            &:hover {
                 color: $orange;
             }
         }
     }
-    
+
 }
-.footerDescription{
+
+.footerDescription {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -324,21 +331,21 @@ footer{
         padding: 0;
     }
 
-    .social{       
+    .social {
 
-        ul{
+        ul {
             display: flex;
             flex-direction: row;
             gap: 16px;
             list-style-type: none;
 
-            img:hover{
+            img:hover {
                 filter: invert(54%) sepia(45%) saturate(593%) hue-rotate(337deg) brightness(94%) contrast(94%);
             }
         }
 
-        img{
-            height: 24px;                    
+        img {
+            height: 24px;
         }
 
     }
@@ -347,31 +354,32 @@ footer{
 
 
 // Headphones category page styles
-
 // General - Category Header styles
 
-.categoryHeader{
-    margin-bottom: 160px;
+.categoryHeader {
+    margin-bottom: $marginBottom;
     background-color: $black;
 
-    .customContainer{
+    .customContainer {
         display: flex;
         flex-direction: column;
         gap: 97px;
         height: 336px;
 
-        h2{
+        h2 {
             color: $white;
             text-align: center;
             // padding-top: 97px;
         }
     }
 }
-.categoryProducts{
+
+// General - Category products syles
+
+.categoryProducts {
     margin-bottom: $marginBottom;
-    
-    
-    .customContainer{
+
+    .customContainer {
         display: flex;
         flex-direction: column;
         gap: 160px;
@@ -379,12 +387,88 @@ footer{
     }
 }
 
-.categoryProduct{
+.categoryProduct {
     display: flex;
     justify-content: space-between;
     height: 560px;
+    gap: 125px;
 
-    img{
+    img {
         height: 100%;
+        border-radius: $borderRadius;
+    }
+
+    .productDescription {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 108px 0;
+
+        & p:first-of-type {
+
+            padding-bottom: 16px;
+        }
+
+        & p:last-of-type {
+            color: $darkGray;
+            padding: 32px 0 40px 0;
+        }
+
+    }
+}
+
+// Headphones product page styles
+//General - Product page - Header Styles
+
+.productHeader {
+    margin-bottom: $marginBottom;
+    background-color: $black;
+
+    .customContainer {
+        height: 97px;
+    }
+
+    header {
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+}
+
+// General - Product details - Styles
+
+.productSection {
+    margin-bottom: $marginBottom;
+}
+
+.productDetails {
+    display: flex;
+    justify-content: space-between;
+    height: 560px;
+    gap: 125px;
+
+    img {
+        height: 100%;
+        border-radius: $borderRadius;
+    }
+
+    .productDescription {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 77px 0;
+
+        & p:first-of-type {
+
+            padding-bottom: 16px;
+        }
+
+        & p:last-of-type {
+            color: $darkGray;
+            padding: 32px 0;
+        }
+
+        h6{
+            padding-bottom: 47px;
+        }
     }
 }

@@ -73,7 +73,7 @@ h6 {
   font-size: 14px;
   line-height: 19px;
   letter-spacing: 10px;
-  color: #FBAF85;
+  color: #D87D4A;
   text-transform: uppercase;
 }
 
@@ -297,7 +297,8 @@ form div {
 header {
   display: flex;
   justify-content: space-between;
-  padding: 35px 0px;
+  padding-top: 32px;
+  padding-bottom: 36px;
   border-bottom: 0.5px solid gray;
 }
 
@@ -326,7 +327,7 @@ nav a:hover {
 }
 
 .categories {
-  margin-bottom: 168px;
+  margin-bottom: 160px;
 }
 .categories .customContainer {
   display: flex;
@@ -443,7 +444,7 @@ nav a:hover {
 }
 
 .about {
-  margin-bottom: 200px;
+  margin-bottom: 160px;
 }
 .about .customContainer {
   display: flex;
@@ -559,7 +560,65 @@ footer nav a:hover {
   display: flex;
   justify-content: space-between;
   height: 560px;
+  gap: 125px;
 }
 .categoryProduct img {
   height: 100%;
+  border-radius: 8px;
+}
+.categoryProduct .productDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 108px 0;
+}
+.categoryProduct .productDescription p:first-of-type {
+  padding-bottom: 16px;
+}
+.categoryProduct .productDescription p:last-of-type {
+  color: gray;
+  padding: 32px 0 40px 0;
+}
+
+.productHeader {
+  margin-bottom: 160px;
+  background-color: #000000;
+}
+.productHeader .customContainer {
+  height: 97px;
+}
+.productHeader header {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.productSection {
+  margin-bottom: 160px;
+}
+
+.productDetails {
+  display: flex;
+  justify-content: space-between;
+  height: 560px;
+  gap: 125px;
+}
+.productDetails img {
+  height: 100%;
+  border-radius: 8px;
+}
+.productDetails .productDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 77px 0;
+}
+.productDetails .productDescription p:first-of-type {
+  padding-bottom: 16px;
+}
+.productDetails .productDescription p:last-of-type {
+  color: gray;
+  padding: 32px 0;
+}
+.productDetails .productDescription h6 {
+  padding-bottom: 47px;
 }/*# sourceMappingURL=main.css.map */
