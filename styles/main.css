@@ -481,7 +481,7 @@ nav a:hover {
   background-color: #D87D4A;
   position: absolute;
 }
-.footer .customContainer p {
+.footer .customContainer p:last-child {
   color: gray;
   padding-top: 56px;
 }
@@ -529,4 +529,37 @@ footer nav a:hover {
 }
 .footerDescription .social img {
   height: 24px;
+}
+
+.categoryHeader {
+  margin-bottom: 160px;
+  background-color: #000000;
+}
+.categoryHeader .customContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 97px;
+  height: 336px;
+}
+.categoryHeader .customContainer h2 {
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.categoryProducts {
+  margin-bottom: 160px;
+}
+.categoryProducts .customContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 160px;
+}
+
+.categoryProduct {
+  display: flex;
+  justify-content: space-between;
+  height: 560px;
+}
+.categoryProduct img {
+  height: 100%;
 }/*# sourceMappingURL=main.css.map */

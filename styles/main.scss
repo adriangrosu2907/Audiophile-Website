@@ -256,7 +256,7 @@ nav {
     }
 }
 
-//General - Footer styles
+//General - Footer section styles
 .footer {
     .customContainer{
         display: flex;
@@ -273,7 +273,7 @@ nav {
             position: absolute;
         }
 
-        p {
+        & p:last-child {
             color: $darkGray;
             padding-top: 56px;
         }
@@ -348,3 +348,43 @@ footer{
 
 // Headphones category page styles
 
+// General - Category Header styles
+
+.categoryHeader{
+    margin-bottom: 160px;
+    background-color: $black;
+
+    .customContainer{
+        display: flex;
+        flex-direction: column;
+        gap: 97px;
+        height: 336px;
+
+        h2{
+            color: $white;
+            text-align: center;
+            // padding-top: 97px;
+        }
+    }
+}
+.categoryProducts{
+    margin-bottom: $marginBottom;
+    
+    
+    .customContainer{
+        display: flex;
+        flex-direction: column;
+        gap: 160px;
+
+    }
+}
+
+.categoryProduct{
+    display: flex;
+    justify-content: space-between;
+    height: 560px;
+
+    img{
+        height: 100%;
+    }
+}
