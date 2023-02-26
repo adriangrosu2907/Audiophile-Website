@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/main.css">
-    <script type="module" src="login.js"></script>
+    <script type="module" src="scripts/login.js"></script>
     <title>Document</title>
 </head>
 
@@ -29,33 +29,34 @@
                     <button id="cart" class="B5">
                         <img src="assets/shared/desktop/icon-cart.svg" alt="Cart">
                     </button>
-                    <button id="login" class="B5">
+                    <button id="loginOpen" class="B5">
                         <img src="assets/shared/desktop/icon-account.svg" alt="Account">
                     </button>
                  </div>
             </header>
         </div>
     </section>
-    <section class="loginSection" >
+    <section class="loginSection" id="loginSection" >
         <div class="customContainer" >
             <div class="login">
                 <h3>Sign In</h3>
                 <form action="">
                     <div class="textItem">
                         <label for="email">E-mail</label>
-                        <input type="email" name="email" id="email" />
+                        <input type="email" name="email" id="email" required/>
                     </div>
                     <div class="textItem">
                         <label for="password">Password</label>
-                        <input type="password" name="password" id="password" />
+                        <input type="password" name="password" id="password" required/>
                     </div>
                     <button class="B4">Sign in</button>
                 </form>
                 <p>Don't have an account? <a href="dasdsa">Sign Up</a></p>
             </div>
-            <div class="loginSide">
-
-            </div>
+            <div class="loginSide"></div>
+            <button id="loginClose" class="B5">
+                <img src="assets/shared/desktop/Dell_fill.svg" alt="Account">
+            </button>
         </div>
     </section>
     <section class="about">
@@ -104,7 +105,6 @@
             <p>&copy; Copyright @ Adrian Grosu 2023. All Rights Reserved</p>
         </div>
     </section>
-
 </body>
 
 </html>
