@@ -9,18 +9,18 @@ form {
     & div {
         //to be modififed later as needed
         width: 309px;
-        height: 56px;
+        height: 81px;
     }
 }
 
 .textItem {
     //margin to be deleted
-    margin-top: 15px;
-    margin-bottom: 15px;
+    // margin-top: 15px;
+    // margin-bottom: 15px;
 
-    & [type="text"]{
+    & [type] {
         // position: relative;
-        height: 100%;
+        height: 65%;
         width: 100%;        
         font-family: inherit;
         font-weight: inherit;
@@ -44,16 +44,13 @@ form {
     }
 
     & label {
-        position: absolute;
+        // position: absolute;
         font-size: 12px;
         letter-spacing: -0.21px;     
 
     }
 
 }
-
-
-
 .radioItem {
     // width: 309px;
     // height: 56px;

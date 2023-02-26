@@ -188,15 +188,11 @@ form {
 }
 form div {
   width: 309px;
-  height: 56px;
+  height: 81px;
 }
 
-.textItem {
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-.textItem [type=text] {
-  height: 100%;
+.textItem [type] {
+  height: 65%;
   width: 100%;
   font-family: inherit;
   font-weight: inherit;
@@ -206,19 +202,18 @@ form div {
   border: 2px solid #F1F1F1;
   padding-left: 24px;
 }
-.textItem [type=text]::-moz-placeholder {
+.textItem [type]::-moz-placeholder {
   color: gray;
 }
-.textItem [type=text]::placeholder {
+.textItem [type]::placeholder {
   color: gray;
 }
-.textItem [type=text]:focus {
+.textItem [type]:focus {
   outline: none;
   border: 2px solid #D87D4A;
   color: #000000;
 }
 .textItem label {
-  position: absolute;
   font-size: 12px;
   letter-spacing: -0.21px;
 }
@@ -315,6 +310,10 @@ header {
   border-bottom: 0.5px solid gray;
 }
 
+nav {
+  display: flex;
+  align-items: center;
+}
 nav ul {
   list-style-type: none;
 }
@@ -331,7 +330,14 @@ nav a:hover {
   color: #D87D4A;
 }
 
+.headerButtons {
+  display: flex;
+  gap: 10px;
+}
+
 .B5 {
+  display: flex;
+  align-items: center;
   background-color: transparent;
   border: none;
 }
@@ -702,4 +708,35 @@ footer nav a:hover {
 .similarBundle .similarProduct img {
   width: 100%;
   border-radius: 8px;
+}
+
+.loginSection {
+  margin-bottom: 160px;
+}
+.loginSection .customContainer {
+  display: flex;
+  height: 500px;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFFFF;
+  width: 50%;
+  border-radius: 8px 0 0 8px;
+  padding: 40px;
+}
+.login form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.loginSide {
+  width: 50%;
+  background-color: #D87D4A;
+  border-radius: 0px 8px 8px 0;
 }/*# sourceMappingURL=main.css.map */
