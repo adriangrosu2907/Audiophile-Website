@@ -711,23 +711,21 @@ footer nav a:hover {
 }
 
 .loginSection {
-  z-index: 100;
-  display: none;
-  top: 25%;
-  position: sticky;
-}
-.loginSection .customContainer {
-  position: relative;
   display: flex;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   height: 500px;
-  width: 1440px;
+  width: 1110px;
+  z-index: 10;
 }
-.loginSection .customContainer .B5 {
+.loginSection .B5 {
   position: absolute;
-  right: 185px;
+  right: 15px;
   top: 15px;
 }
-.loginSection .customContainer .B5:hover {
+.loginSection .B5:hover {
   scale: 1.25;
   filter: none;
 }

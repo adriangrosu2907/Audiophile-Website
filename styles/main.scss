@@ -575,31 +575,37 @@ footer {
 }
 
 // Login popup / page
+
+   
+    
+    
+    // look into stoping scroll
+
 .loginSection {
-    z-index: 100;
-    display: none;
-    top: 25%;
-    position: sticky;
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    height: 500px;
+    width: 1110px;
+    z-index: 10;
+    
 
-    .customContainer {
-        position: relative;
-        display: flex;
-        height: 500px;
-        width: 1440px;
+    .B5{
+        position: absolute;
+        right: 15px;
+        top: 15px;
 
-        .B5{
-            position: absolute;
-            right: 185px;
-            top: 15px;
-
-            &:hover {
-                scale: 1.25;
-                filter: none;
-            }
+        &:hover {
+            scale: 1.25;
+            filter: none;
         }
     }
-
 }
+
+
 
 .login {
     display: flex;
@@ -637,5 +643,4 @@ body {
     width: 100%;
     background-color: black;
     opacity: 80%;
-    // filter: blur(1000px);
 }
