@@ -55,10 +55,10 @@ function generateLogin() {
     par1.textContent = "Don't have an account?";
     login.appendChild(par1);
 
-    const anchor1 = document.createElement("a");
-    anchor1.textContent = "Sign Up";
-    anchor1.setAttribute("href", "tobeadded");
-    par1.appendChild(anchor1);
+    const loginAanchor = document.createElement("a");
+    loginAanchor.textContent = "Sign Up";
+    loginAanchor.setAttribute("href", "#");
+    par1.appendChild(loginAanchor);
 
     const loginSide = document.createElement("div");
     loginSide.classList.add("loginSide");
@@ -84,6 +84,13 @@ function generateLogin() {
             divOverlay.remove();
         }
     })
+
+    loginAanchor.addEventListener("click", ()=>{
+        loginSide.style.left = "0";
+        loginSide.style.borderRadius = "8px 0 0 8px";
+        loginSide.style.transition = "left 1s";
+    })
+
     return loginSection;
 };
 

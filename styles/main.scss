@@ -616,6 +616,7 @@ footer {
     width: 50%;
     border-radius: $borderRadius 0 0 $borderRadius;
     padding: 40px;
+    // order: 2;
 
     form {
         display: flex;
@@ -626,9 +627,14 @@ footer {
 }
 
 .loginSide {
-    width: 50%;
-    background-color: $orange;
+
+    position: absolute;
+    left: 50%;
     border-radius: 0px $borderRadius $borderRadius 0;
+    width: 555px;
+    height: 500px;
+    background-color: $orange;
+    
 }
 
 body {

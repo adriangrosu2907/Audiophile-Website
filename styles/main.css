@@ -748,9 +748,12 @@ footer nav a:hover {
 }
 
 .loginSide {
-  width: 50%;
-  background-color: #D87D4A;
+  position: absolute;
+  left: 50%;
   border-radius: 0px 8px 8px 0;
+  width: 555px;
+  height: 500px;
+  background-color: #D87D4A;
 }
 
 body {
