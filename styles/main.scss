@@ -607,7 +607,7 @@ footer {
 
 
 
-.login {
+.login_signup {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -625,7 +625,12 @@ footer {
         gap: 25px;
     }
 }
+.signUp{
+    border-radius: 0 $borderRadius $borderRadius 0;
+    // background-color: orange;
+    
 
+}
 .loginSide {
 
     position: absolute;
@@ -634,6 +639,8 @@ footer {
     width: 555px;
     height: 500px;
     background-color: $orange;
+    background-image: url("../assets/home/desktop/pattern-circles.svg");
+    // background-size: 150%;
     
 }
 

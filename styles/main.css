@@ -730,7 +730,7 @@ footer nav a:hover {
   filter: none;
 }
 
-.login {
+.login_signup {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -740,11 +740,15 @@ footer nav a:hover {
   border-radius: 8px 0 0 8px;
   padding: 40px;
 }
-.login form {
+.login_signup form {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 25px;
+}
+
+.signUp {
+  border-radius: 0 8px 8px 0;
 }
 
 .loginSide {
@@ -754,6 +758,7 @@ footer nav a:hover {
   width: 555px;
   height: 500px;
   background-color: #D87D4A;
+  background-image: url("../assets/home/desktop/pattern-circles.svg");
 }
 
 body {
