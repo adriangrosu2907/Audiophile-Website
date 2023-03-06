@@ -126,6 +126,7 @@ h6 {
 
 .B1:hover {
   background-color: #FBAF85;
+  cursor: pointer;
 }
 
 .B2 {
@@ -138,6 +139,7 @@ h6 {
   background-color: #000000;
   color: #FFFFFF;
   border: 0 px;
+  cursor: pointer;
 }
 
 .B3 {
@@ -154,6 +156,7 @@ h6 {
 .B3:hover {
   background-color: transparent;
   color: #D87D4A;
+  cursor: pointer;
 }
 
 .B4 {
@@ -166,6 +169,7 @@ h6 {
   background-color: #FFFFFF;
   color: #000000;
   border: 1px black solid;
+  cursor: pointer;
 }
 
 .B6 {
@@ -343,6 +347,7 @@ nav a:hover {
 }
 .B5:hover {
   filter: invert(54%) sepia(45%) saturate(593%) hue-rotate(337deg) brightness(94%) contrast(94%);
+  cursor: pointer;
 }
 
 .categories {
