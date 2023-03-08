@@ -1,7 +1,7 @@
 const headphoneProducts = [
     {
         name: "XX99 Mark II Headphones",
-        product: "product-xx99-mark-one-headphones",
+        longName: "product-xx99-mark-two-headphones",
         description: "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
         price: "$ 2,999",
         // imageCat: "assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg",
@@ -13,7 +13,7 @@ const headphoneProducts = [
 
     {
         name: "XX99 Mark I Headphones",
-        product: "product-xx99-mark-one-headphones",
+        longName: "product-xx99-mark-one-headphones",
         description: "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
         price: "$ 1,750",
         // imageCat: "assets/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg",
@@ -25,7 +25,7 @@ const headphoneProducts = [
 
     {
         name: "XX59 Headphones",
-        product: "product-xx59-headphones",
+        longName: "product-xx59-headphones",
         description: "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
         price: "$ 899",
         // imageCat: "assets/product-xx59-headphones/desktop/image-category-page-preview.jpg",
@@ -48,6 +48,5 @@ const earphoneProducts = [
 
 
 localStorage.setItem("headphoneProducts", JSON.stringify(headphoneProducts));
-localStorage.setItem("test", "test");
 
-location.replace("/mark-two.html")
+location.replace("/markTwo.html")

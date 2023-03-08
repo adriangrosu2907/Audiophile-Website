@@ -651,6 +651,10 @@ footer nav a:hover {
 .productDetails .productDescription h6 {
   padding-bottom: 47px;
 }
+.productDetails .productDescription .buttonsDiv {
+  display: flex;
+  gap: 15px;
+}
 
 .productFeatures {
   display: flex;
