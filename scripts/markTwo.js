@@ -15,7 +15,7 @@ function generateProductDetails(product, screenType) {
     customContainer1.appendChild(productDetails);
 
     const productImg = document.createElement("img");
-    const productImgPath = "assets/" + product.longName + "/" + screenType + "/image-category-page-preview.jpg";
+    const productImgPath = "assets/" + product.longName + "/" + screenType + "/image-product.jpg";
     productImg.setAttribute("src", productImgPath);
     productImg.setAttribute("alt", product.name);
     productDetails.appendChild(productImg);
