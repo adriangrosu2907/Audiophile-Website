@@ -1,22 +1,23 @@
 const headphoneProductsString = localStorage.getItem("headphoneProducts");
 const headphoneProducts = JSON.parse(headphoneProductsString);
-
 // console.log(headphoneProducts);
 
 const productSection = document.querySelector(".productSection");
 // console.log(productSection);
+
 const customContainer1 = document.createElement("div");
 customContainer1.classList.add("customContainer");
 productSection.appendChild(customContainer1);
 
-function generateProductDetails(product) {
+function generateProductDetails(product, screenType) {
     const productDetails = document.createElement("div");
     productDetails.classList.add("productDetails");
     customContainer1.appendChild(productDetails);
 
     const productImg = document.createElement("img");
-    const productImgPath = "assets/" + product.longName + "/desktop/image-category-page-preview.jpg";
+    const productImgPath = "assets/" + product.longName + "/" + screenType + "/image-category-page-preview.jpg";
     productImg.setAttribute("src", productImgPath);
+    productImg.setAttribute("alt", product.name);
     productDetails.appendChild(productImg);
 
     const productDescription = document.createElement("div");
@@ -92,7 +93,7 @@ function generateProductFeatures(product) {
         span.textContent = words[0];
         span.classList.add("highlight");
         const restOfSentence = words.slice(1).join(" ");
-        const text = document.createTextNode("\u2003"+ restOfSentence);
+        const text = document.createTextNode("\u2003" + restOfSentence);
         const br = document.createElement("br");
 
         productP4.appendChild(span);
@@ -104,20 +105,70 @@ function generateProductFeatures(product) {
 
 };
 
-function generateProductSection(productsList) {
-    const productSection = document.querySelector(".productSection");
-    for (let i = 0; i < productsList.length; i++) {
-        if (productsList[i].longName === "product-xx99-mark-two-headphones") {
-            const product = productsList[i];
-            generateProductDetails(product);
-            generateProductFeatures(product);
-        }
-    }
-    // const customContainer1 = document.createElement("div");
-    // customContainer1.classList.add("customContainer");
-    // productSection.appendChild(customContainer1);
+function generateProductGallery(product, screenType) {
+
+    const productImages = document.createElement("div");
+    productImages.classList.add("productImages");
+    customContainer1.appendChild(productImages);
+
+    const bundleImagesDiv = document.createElement("div");
+    bundleImagesDiv.classList.add("bundleImages");
+    productImages.appendChild(bundleImagesDiv);
+
+    const productGalleryImg1 = document.createElement("img");
+    const productImg1Path = "assets/" + product.longName + "/" + screenType + "/image-gallery-1.jpg";
+    productGalleryImg1.setAttribute("src", productImg1Path);
+    productGalleryImg1.setAttribute("alt", product.name);
+    bundleImagesDiv.appendChild(productGalleryImg1);
+
+    const productGalleryImg2 = document.createElement("img");
+    const productImg2Path = "assets/" + product.longName + "/" + screenType + "/image-gallery-2.jpg";
+    productGalleryImg2.setAttribute("src", productImg2Path);
+    productGalleryImg2.setAttribute("alt", product.name);
+    bundleImagesDiv.appendChild(productGalleryImg2);
+
+    const productGalleryImg3 = document.createElement("img");
+    const productImg3Path = "assets/" + product.longName + "/" + screenType + "/image-gallery-3.jpg";
+    productGalleryImg3.setAttribute("src", productImg3Path);
+    productGalleryImg3.setAttribute("alt", product.name);
+    productImages.appendChild(productGalleryImg3);
+
 
 };
 
+
+function generateProductSection(productsList) {
+
+    let pageWidth = window.innerWidth;
+    // console.log(pageWidth);
+    let screenType = "";
+
+    if (pageWidth <= 375) {
+        screenType = "mobile";
+    } else if (pageWidth > 375 && pageWidth <= 768) {
+        screenType = "tablet";
+    } else if (pageWidth > 768) {
+        screenType = "desktop";
+    }
+    // console.log(screenType);
+    // console.log(pageWidth);    
+
+    const productSection = document.querySelector(".productSection");
+    customContainer1.innerHTML = "";
+
+    for (let i = 0; i < productsList.length; i++) {
+        if (productsList[i].longName === "product-xx99-mark-two-headphones") {
+            const product = productsList[i];
+            generateProductDetails(product, screenType);
+            generateProductFeatures(product);
+            generateProductGallery(product, screenType);
+        }
+    }
+};
+
+// re-creeam lista cand utilizatorul face resize la screen
+window.addEventListener('resize', () => {
+    generateProductSection(headphoneProducts);
+}, false)
+
 generateProductSection(headphoneProducts);
-// generateProductDetails();
