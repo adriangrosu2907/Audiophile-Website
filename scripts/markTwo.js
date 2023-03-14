@@ -157,7 +157,7 @@ function generateProductSection(productsList) {
     customContainer1.innerHTML = "";
 
     for (let i = 0; i < productsList.length; i++) {
-        if (productsList[i].longName === "product-xx99-mark-two-headphones") {
+        if (productsList[i].name === "XX99 Mark II Headphones") {
             const product = productsList[i];
             generateProductDetails(product, screenType);
             generateProductFeatures(product);

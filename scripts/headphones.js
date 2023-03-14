@@ -40,7 +40,7 @@ function generateCategoryProductL(product, screenType) {
     productDescription.appendChild(productP2);
 
     const productButton2 = document.createElement("button");
-    productButton2.textContent = "Add to cart";
+    productButton2.textContent = "See product";
     productButton2.classList.add("B1");
     productDescription.appendChild(productButton2);
 
@@ -71,7 +71,7 @@ function generateCategoryProductR(product, screenType) {
     productDescription.appendChild(productP2);
 
     const productButton2 = document.createElement("button");
-    productButton2.textContent = "Add to cart";
+    productButton2.textContent = "See product";
     productButton2.classList.add("B1");
     productDescription.appendChild(productButton2);
 
@@ -83,7 +83,9 @@ function generateCategoryProductR(product, screenType) {
 
 };
 
-function generateCategorySection(productsList) {
+const maxNoProducts = 3;
+
+function generateCategorySection(indexStart, productsList) {
 
     let pageWidth = window.innerWidth;
     // console.log(pageWidth);
@@ -96,13 +98,13 @@ function generateCategorySection(productsList) {
     } else if (pageWidth > 768) {
         screenType = "desktop";
     }
-    console.log(screenType);
-    console.log(pageWidth);    
+    // console.log(screenType);
+    // console.log(pageWidth);    
 
     const categorySection = document.querySelector(".categoryProducts");
     customContainer2.innerHTML = "";
 
-    for (let i = 0; i < productsList.length; i++) {
+    for (let i = indexStart; i < indexStart + maxNoProducts && i < productsList.length; i++) {
         if (i % 2 == 0) {
             generateCategoryProductL(productsList[i], screenType);
         } else {
@@ -113,7 +115,43 @@ function generateCategorySection(productsList) {
 
 // re-creeam lista cand utilizatorul face resize la screen
 window.addEventListener('resize', () => {
-    generateCategorySection(headphoneProducts);
+    generateCategorySection(0, headphoneProducts);
+    generatePagination(headphoneProducts);
 }, false)
 
-generateCategorySection(headphoneProducts);
+
+function generatePagination(list) {
+
+    const paginationDiv = document.createElement("div");
+    paginationDiv.classList.add("pagination");
+    customContainer2.appendChild(paginationDiv);
+
+    const ul = document.createElement("ul");
+    const numberOfPages = Math.ceil(list.length / maxNoProducts);
+
+    for (let i = 0; i < numberOfPages; i++) {
+        const li = document.createElement("li");
+        li.textContent = i + 1;
+        ul.appendChild(li);
+    }
+
+    ul.addEventListener("click", (e) => {
+        const pageNumber = e.target.textContent;
+        if(pageNumber.length === 1){
+            const pageNumberInt = parseInt(pageNumber);
+            const startIndex = (pageNumberInt - 1) * maxNoProducts;
+            pageNumber
+            // console.log(pageNumber);
+            generateCategorySection(startIndex, list);
+            generatePagination(list);
+        }
+       
+
+    })
+
+    paginationDiv.appendChild(ul);
+
+}
+
+generateCategorySection(0, headphoneProducts);
+generatePagination(headphoneProducts);

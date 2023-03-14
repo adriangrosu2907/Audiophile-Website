@@ -663,3 +663,34 @@ body {
     background-color: black;
     opacity: 80%;
 }
+
+// Pagination 
+
+.pagination {
+
+
+    ul{
+        
+        list-style: none;
+        display: flex;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        gap: 15px;
+        justify-content: center;
+        font-size: larger;
+
+       
+
+        li {
+            
+            cursor: pointer;
+        }
+
+        li:hover {
+            color: $orange;
+            scale: 1.3;
+        }
+
+    }
+}
