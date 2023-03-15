@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/main.css">
-    <script type="module" src="scripts/login.js"></script>
+    <script type="module" src="scripts/checkout.js"></script>
     <title>Document</title>
 </head>
 
-<body>
+<body style="background-color: #F2F2F2;">
     <section class="productHeader">
         <div class="customContainer">
             <header>
@@ -36,53 +36,124 @@
             </header>
         </div>
     </section>
-    <!-- <section class="loginSection">
-        <div class="login_signup">
-            <h3>Sign In</h3>
-            <form action="">
-                <div class="textItem">
-                    <label for="email">E-mail</label>
-                    <input type="email" name="email" id="email" required />
-                </div>
-                <div class="textItem">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" required />
-                </div>
-                <button class="B4">Sign in</button>
-            </form>
-            <p>Don't have an account? <a href="dasdsa">Sign Up</a></p>
-        </div>
-        <div class="login_signup signUp">
-            <h3>Sign Up</h3>
-            <form action="">
-                <div class="textItem">
-                    <label for="email">E-mail</label>
-                    <input type="email" name="email" id="email" required />
-                </div>
-                <div class="textItem">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" required />
-                </div>
-                <button class="B4">Sign up</button>
-            </form>
-            <p>Already have an account? <a href="#">Sign In</a></p>
-        </div>
-        <div class="loginSide"></div>
-        <button id="loginClose" class="B5">
-            <img src="assets/shared/desktop/Dell_fill.svg" alt="Account">
-        </button>
-    </section> -->
-    <section class="about">
+    <section class="checkoutSection">
         <div class="customContainer">
-            <div class="aboutDescription">
-                <h2>Bringing you the <span class="highlight">best</span> audio gear</h2>
-                <p>Located at the heart of New York City, Audiophile is the premier store for high end headphones,
-                    earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms
-                    available for you to browse and experience a wide range of our products. Stop by our store to meet
-                    some of the fantastic people who make Audiophile the best place to buy your portable audio
-                    equipment.</p>
+            <div class="checkout">
+                <h3>Checkout</h3>
+                <form action="">
+                    <p class="subtitleOrange">Billing Details</p>
+                    <div class="billingDetails">
+                        <div class="textItem">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" placeholder="Name Surname" required />
+                        </div>
+                        <div class="textItem">
+                            <label for="email">E-mail Address</label>
+                            <input type="email" name="email" id="email" placeholder="surname.name@mail.com" required />
+                        </div>
+                        <div class="textItem">
+                            <label for="phone">Phone Number</label>
+                            <input type="number" name="phone" id="phone" placeholder="+40 789 934 254" required />
+                        </div>
+                    </div>
+                    <p class="subtitleOrange">Shipping Info</p>
+                    <div class="shippingInfo">                        
+                        <div class="textItem">
+                            <label for="address">Address</label>
+                            <input type="text" name="address" id="address" placeholder="1137 Street Name" required />
+                        </div>
+                        <div class="textItem">
+                            <label for="zipcode">ZIP Code</label>
+                            <input type="number" name="zipcode" id="zipcode" placeholder="100001" required />
+                        </div>
+                        <div class="textItem">
+                            <label for="city">City</label>
+                            <input type="text" name="city" id="city" placeholder="City" required />
+                        </div>
+                        <div class="textItem">
+                            <label for="country">Country</label>
+                            <input type="text" name="country" id="country" placeholder="Country" required />
+                        </div>
+                    </div>
+                    <p class="subtitleOrange">Payment Details</p>
+                    <div class="paymentDetails"> 
+                        <label for="paymentMethod">Payment Method</label>
+                        <div class="paymentMethod">
+                            <div class="radioItem">
+                                <input type="radio" id="2" name="paymentType" value="e-Money">
+                                <label for="2">e-Money</label>
+                            </div>
+                        
+                            <div class="radioItem">
+                                <input type="radio" id="3" name="paymentType" value="Cash on Delivery">
+                                <label for="3">Cash on Delivery</label>
+                            </div>
+                        </div>                       
+                        <div class="textItem">
+                            <label for="e-moneyNumber">e-Money Number</label>
+                            <input type="number" name="e-moneyNumber" id="e-moneyNumber" placeholder="238521993" required />
+                        </div>
+                        <div class="textItem">
+                            <label for="e-moneyPIN">e-Money PIN</label>
+                            <input type="number" name="e-moneyPIN" id="e-moneyPIN" placeholder="5798" required />
+                        </div>
+                    </div>
+                </form>
             </div>
-            <img src="assets/shared/desktop/image-best-gear.jpg" alt="best gear">
+            <div class="checkoutSummary">
+                <div class="checkoutHeader">
+                    <h6>Summary</h6>
+                    <button id="loginClose" class="B5">
+                        <img src="assets/shared/desktop/Dell_fill.svg" alt="Account">
+                    </button>
+                </div>
+                <div class="checkoutCart">
+                    <div class="checkoutCartItem">
+                        <img src="assets/product-xx59-headphones/desktop/image-product.jpg" alt="">
+                        <div class="namePlusPrice">
+                            <p>Title</p>
+                            <p>Price</p>
+                        </div>
+                        <p>x1</p>
+                    </div>
+                    
+                    <div class="checkoutCartItem">
+                        <img src="assets/product-xx59-headphones/desktop/image-product.jpg" alt="">
+                        <div class="namePlusPrice">
+                            <p>Title</p>
+                            <p>Price</p>
+                        </div>
+                        <p>x1</p>
+                    </div>
+                    <div class="checkoutCartItem">
+                        <img src="assets/product-xx59-headphones/desktop/image-product.jpg" alt="">
+                        <div class="namePlusPrice">
+                            <p>Title</p>
+                            <p>Price</p>
+                        </div>
+                        <p>x1</p>
+                    </div>
+                </div>
+                <div class="checkoutCartNumbers">
+                    <div>
+                        <p>TOTAL</p>
+                        <h6>$ 5396</h6>
+                    </div>
+                    <div>
+                        <p>SHIPPING</p>
+                        <h6>$ 5396</h6>
+                    </div>
+                    <div>
+                        <p>VAT (INCLUDED)</p>
+                        <h6>$ 5396</h6>
+                    </div>
+                    <div>
+                        <p>GRAND TOTAL</p>
+                        <h6>$ 5396</h6>
+                    </div>
+                </div>
+                <button class="B1 longerButton">Continue & Pay</button>
+            </div>
         </div>
     </section>
     <section class="footer">

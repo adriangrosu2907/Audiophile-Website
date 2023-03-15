@@ -580,12 +580,8 @@ footer {
     }
 }
 
-// Login popup / page
-
-   
-    
-    
-    // look into stoping scroll
+// Login popup / page    
+// look into stoping scroll
 
 .loginSection {
     display: flex;
@@ -593,13 +589,13 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
+
     height: 500px;
     width: 1110px;
     z-index: 10;
-    
 
-    .B5{
+
+    .B5 {
         position: absolute;
         right: 15px;
         top: 15px;
@@ -631,12 +627,14 @@ footer {
         gap: 25px;
     }
 }
-.signUp{
+
+.signUp {
     border-radius: 0 $borderRadius $borderRadius 0;
     // background-color: orange;
-    
+
 
 }
+
 .loginSide {
 
     position: absolute;
@@ -647,7 +645,7 @@ footer {
     background-color: $orange;
     background-image: url("../assets/home/desktop/pattern-circles.svg");
     // background-size: 150%;
-    
+
 }
 
 body {
@@ -669,8 +667,8 @@ body {
 .pagination {
 
 
-    ul{
-        
+    ul {
+
         list-style: none;
         display: flex;
         width: 100%;
@@ -680,10 +678,10 @@ body {
         justify-content: center;
         font-size: larger;
 
-       
+
 
         li {
-            
+
             cursor: pointer;
         }
 
@@ -692,5 +690,136 @@ body {
             scale: 1.3;
         }
 
+    }
+}
+
+// Checkout page styles
+
+.checkoutSection {
+    margin-bottom: $marginBottom;
+
+    .customContainer {
+        display: flex;
+        gap: 18px;
+    }
+}
+
+.checkout {
+    width: 730px;
+    height: 1050px;
+    background-color: $white;
+    border-radius: $borderRadius;
+    padding: 48px;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        // gap: 200px;
+
+        &>p {
+            padding-top: 50px;
+        }
+
+        &>div {
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 24px;
+            column-gap: 16px;
+            width: 100%;
+            height: 100%;
+            padding-top: 16px;
+        }
+
+        & div>.paymentMethod {
+            height: 100%;
+
+        }
+
+        & label[for="paymentMethod"] {
+            width: 309px;
+            font-size: 12px;
+            letter-spacing: -0.21px;
+        }
+    }
+}
+
+
+.checkoutSummary {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 350px;
+    // height: 612px;
+    background-color: $white;
+    border-radius: $borderRadius;
+    padding: 33px;
+
+    .checkoutHeader {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    .checkoutCart {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin-bottom: 32px;
+        height: 65%;
+    }
+
+    .checkoutCartItem {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // gap: 16px;
+
+        & p:first-child {
+            font-weight: 700;
+            text-transform: uppercase;
+            width: 170px;
+        }
+
+        & p:last-child {
+            font-size: 15px;
+            color: $darkGray;
+            font-weight: 700;
+        }
+
+        img {
+            width: 64px;
+            border-radius: $borderRadius;
+        }
+
+        .namePlusPrice {
+            // justify-content: flex-start;
+            text-align: left;
+        }
+    }
+
+    .checkoutCartNumbers {
+        margin-bottom: 32px;
+
+        &>div {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+
+            & p:first-child {
+                color: $darkGray;
+            }
+
+        }
+
+        & div:last-child {
+            padding-top: 24px;
+
+            &> h6{
+            color: $orange;}
+        }
+    }
+
+    .B1 {
+        width: 100%;
     }
 }
