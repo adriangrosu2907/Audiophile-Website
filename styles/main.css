@@ -107,7 +107,10 @@ h6 {
   text-transform: uppercase;
 }
 
-.B1, .B2, .B3, .B4 {
+.B1,
+.B2,
+.B3,
+.B4 {
   width: 160px;
   height: 48px;
   font-family: "Manrope", sans-serif;
@@ -145,7 +148,7 @@ h6 {
 .B3 {
   background-color: transparent;
   color: #000000;
-  background-image: url(/Audiophile-Website/assets/shared/desktop/icon-arrow-right.svg);
+  background-image: url(../assets/shared/desktop/icon-arrow-right.svg);
   background-repeat: no-repeat;
   background-position-x: 65%;
   background-position-y: 50%;
@@ -185,6 +188,23 @@ h6 {
   background-color: #F1F1F1;
 }
 
+#goback {
+  background-image: none;
+  background-color: transparent;
+  top: 100px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 1px;
+  border: 0px;
+  color: gray;
+  padding-top: 112px;
+  cursor: pointer;
+}
+#goback:hover {
+  color: #D87D4A;
+}
+
 form {
   font-family: "Manrope", sans-serif;
   font-weight: 700;
@@ -216,6 +236,10 @@ form div {
   outline: none;
   border: 2px solid #D87D4A;
   color: #000000;
+}
+.textItem input::-webkit-outer-spin-button,
+.textItem input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 .textItem label {
   font-size: 12px;

@@ -1,12 +1,15 @@
 @import "colors";
 
-.B1, .B2, .B3, .B4 {
+.B1,
+.B2,
+.B3,
+.B4 {
     width: 160px;
     height: 48px;
     font-family: 'Manrope', sans-serif;
     font-weight: 700;
     font-size: 13px;
-    letter-spacing: 1px;     
+    letter-spacing: 1px;
     text-transform: uppercase;
     border: 0px;
     padding: 0;
@@ -15,28 +18,28 @@
 
 // Button 1 Default ->B1
 
-.B1{
+.B1 {
 
     background-color: $orange;
     color: $white;
 
 }
 
-.B1:hover{
+.B1:hover {
     background-color: $lightOrange;
     cursor: pointer;
 }
 
 // Button 2 Default ->B2
 
-.B2{
+.B2 {
     background-color: transparent;
     color: $black;
-    border: 1px black solid;    
+    border: 1px black solid;
 
 }
 
-.B2:hover{
+.B2:hover {
     background-color: $black;
     color: $white;
     border: 0 px;
@@ -45,11 +48,11 @@
 
 // Button 3 Default ->B3
 
-.B3{
-    
+.B3 {
+
     background-color: transparent;
     color: $black;
-    background-image: url(/Audiophile-Website/assets/shared/desktop/icon-arrow-right.svg);
+    background-image: url(../assets/shared/desktop/icon-arrow-right.svg);
     background-repeat: no-repeat;
     background-position-x: 65%;
     background-position-y: 50%;
@@ -59,36 +62,55 @@
 
 }
 
-.B3:hover{
+.B3:hover {
     background-color: transparent;
     color: $orange;
     cursor: pointer;
 }
 
-.B4{
+.B4 {
     background-color: $black;
     color: $white;
     border: 0 px;
 
 }
 
-.B4:hover{
-    
+.B4:hover {
+
     background-color: $white;
     color: $black;
     border: 1px black solid;
     cursor: pointer;
 }
 
-.B6{
+.B6 {
     width: 120px;
     height: 48px;
     font-family: 'Manrope', sans-serif;
     font-weight: 700;
     font-size: 13px;
-    letter-spacing: 1px;     
+    letter-spacing: 1px;
     text-transform: uppercase;
     border: 0px;
     padding: 0;
     background-color: $gray;
+}
+
+#goback {
+    background-image: none;
+    background-color: transparent;
+    top: 100px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 1px;
+    border: 0px;
+    color: $darkGray;
+    padding-top: 112px;
+    cursor: pointer; 
+
+    &:hover{
+        color: $orange;
+    }
+
 }

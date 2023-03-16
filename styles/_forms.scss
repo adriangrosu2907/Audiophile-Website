@@ -43,6 +43,12 @@ form {
         // add style for Text field error 
     }
 
+    & input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    //   margin: 0;
+    }
+
     & label {
         // position: absolute;
         font-size: 12px;
