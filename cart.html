@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <div class="popupOverlay"></div>
     <section class="productHeader">
         <div class="customContainer">
             <header>
@@ -34,6 +35,60 @@
                     </button>
                 </div>
             </header>
+        </div>
+    </section>
+    <section class="cartSection">
+        <div class="cart">
+            <div class="cartHeader">
+                <h6>Cart (<span>0</span>)</h6>
+                <button id="removeCartItems" > Remove all</button>
+            </div>
+            <div class="cartBody">
+                <div class="cartItem">
+                    <img src="assets/product-xx59-headphones/desktop/image-product.jpg" alt="">
+                    <div class="namePlusPrice">
+                        <p>Title</p>
+                        <p>Price</p>
+                    </div>
+                    <div class="plusMinus">
+                        <button onclick="increment()">-</button>
+                        <span id="count">0</span>
+                        <button onclick="decrement()">+</button>
+                    </div>
+                </div>
+                
+                <div class="cartItem">
+                    <img src="assets/product-xx59-headphones/desktop/image-product.jpg" alt="">
+                    <div class="namePlusPrice">
+                        <p>Title</p>
+                        <p>Price</p>
+                    </div>
+                    <div class="plusMinus">
+                        <button onclick="increment()">-</button>
+                        <span id="count">0</span>
+                        <button onclick="decrement()">+</button>
+                    </div>
+                </div>
+                <div class="cartItem">
+                    <img src="assets/product-xx59-headphones/desktop/image-product.jpg" alt="">
+                    <div class="namePlusPrice">
+                        <p>Title</p>
+                        <p>Price</p>
+                    </div>
+                    <div class="plusMinus">
+                        <button onclick="increment()">-</button>
+                        <span id="count">0</span>
+                        <button onclick="decrement()">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cartNumbers">
+                <div>
+                    <p>TOTAL</p>
+                    <h6>$ 5396</h6>
+                </div>
+            </div>
+            <button class="B1">Continue & Pay</button>
         </div>
     </section>
     <section class="about">
