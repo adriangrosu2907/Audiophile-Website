@@ -673,6 +673,7 @@ footer nav a:hover {
 .productHeader .customContainer {
   height: 97px;
   background-color: #000000;
+  border-radius: 0 0 8px 8px;
 }
 .productHeader header {
   padding-bottom: 0;
@@ -1028,12 +1029,10 @@ body {
 }
 .cart .cartNumbers {
   margin-bottom: 24px;
-}
-.cart .cartNumbers > div {
   display: flex;
   justify-content: space-between;
 }
-.cart .cartNumbers > div p:first-child {
+.cart .cartNumbers p:first-child {
   color: gray;
 }
 .cart .B1 {

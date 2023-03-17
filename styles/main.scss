@@ -439,6 +439,7 @@ footer {
     .customContainer {
         height: 97px;
         background-color: $black;
+        border-radius: 0 0 $borderRadius $borderRadius;
     }
 
     header {
@@ -899,14 +900,11 @@ body {
 
     .cartNumbers {
         margin-bottom: 24px;
+        display: flex;
+        justify-content: space-between;
 
-        &>div {
-            display: flex;
-            justify-content: space-between;
-
-            & p:first-child {
-                color: $darkGray;
-            }
+        & p:first-child {
+            color: $darkGray;
         }
     }
 
