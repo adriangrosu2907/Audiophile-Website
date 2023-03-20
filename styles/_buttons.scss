@@ -16,7 +16,7 @@
 
 }
 
-// Button 1 Default ->B1
+/* Button 1 Default ->B1 */
 
 .B1 {
 
@@ -30,7 +30,7 @@
     cursor: pointer;
 }
 
-// Button 2 Default ->B2
+/* Button 2 Default ->B2 */
 
 .B2 {
     background-color: transparent;
@@ -46,7 +46,7 @@
     cursor: pointer;
 }
 
-// Button 3 Default ->B3
+/* Button 3 Default ->B3 */
 
 .B3 {
 
@@ -83,6 +83,36 @@
     cursor: pointer;
 }
 
+.headerButtons {
+    display: flex;
+    gap: 10px;
+    position: relative;
+}
+
+.B5 {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+        filter: invert(54%) sepia(45%) saturate(593%) hue-rotate(337deg) brightness(94%) contrast(94%);
+        cursor: pointer; 
+    }
+}
+
+#labelCartCount {
+    position: absolute;
+    color: $orange;
+    left: 42.5%;
+    top: -5px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
 .B6 {
     width: 120px;
     height: 48px;
@@ -106,9 +136,9 @@
     border: 0px;
     color: $darkGray;
     padding-top: 112px;
-    cursor: pointer; 
+    cursor: pointer;
 
-    &:hover{
+    &:hover {
         color: $orange;
     }
 
@@ -123,32 +153,36 @@
     border: 0px;
     color: $darkGray;
     text-decoration: underline;
-    cursor: pointer; 
+    cursor: pointer;
 
-    &:hover{
+    &:hover {
         color: $orange;
     }
 
 }
 
-.plusMinus{
+.plusMinus {
     display: flex;
     width: 120px;
     height: 48px;
     background-color: $gray;
     justify-content: center;
     align-items: center;
-    gap: 20px;    
+    gap: 20px;
 
-    button {
+    .plusMinusButton {
         background-color: transparent;
         border-width: 0;
         font-family: inherit;
-        font-size: 15px;
+        font-size: 18px;
         font-style: inherit;
-        font-weight: 700;
+        font-weight: 500;
         line-height: 18px;
         padding: 0;
         color: $darkGray;
+
+        &:hover {
+            color: $orange;
+        }
     }
 }
