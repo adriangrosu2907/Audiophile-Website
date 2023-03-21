@@ -40,6 +40,12 @@ function generateCategoryProductL(product, screenType) {
     productDescription.appendChild(productP2);
 
     const productButton2 = document.createElement("button");
+    productButton2.addEventListener("click", function(){
+       var url = new URL(window.location.origin + "/product.html");
+       url.searchParams.set("product", product.name);
+       debugger
+       window.location.href = url.href;
+    });
     productButton2.textContent = "See product";
     productButton2.classList.add("B1");
     productDescription.appendChild(productButton2);
@@ -71,6 +77,12 @@ function generateCategoryProductR(product, screenType) {
     productDescription.appendChild(productP2);
 
     const productButton2 = document.createElement("button");
+    productButton2.addEventListener("click", function(){
+        var url = new URL(window.location.origin + "/product.html");
+        url.searchParams.set("product", product.name);
+        debugger
+        window.location.href = url.href;
+     });
     productButton2.textContent = "See product";
     productButton2.classList.add("B1");
     productDescription.appendChild(productButton2);

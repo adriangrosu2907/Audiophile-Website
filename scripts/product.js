@@ -162,6 +162,7 @@ function cartNumbers(product) {
     productNumbers = parseInt(productNumbers);
 
     let onPageCount = parseInt(document.getElementById("count").textContent);
+    console.log(onPageCount);
 
     if (productNumbers) {
         localStorage.setItem("cartNumbers", productNumbers + onPageCount);
@@ -183,7 +184,6 @@ function onLoadCartNumbers() {
 };
 
 function setItems(product) {
-
     let cartItems = localStorage.getItem("productsInCart");
     cartItems = JSON.parse(cartItems);
     // console.log("My cart items are:", cartItems)
@@ -220,14 +220,50 @@ function totalCost(product) {
     let cartCost = localStorage.getItem("totalCost");
 
     let onPageCount = parseInt(document.getElementById("count").textContent);
-
+    let totalCartCost = 0;
     if (cartCost != null) {
-        cartCost = parseInt(cartCost);
-        localStorage.setItem("totalCost", cartCost + parseInt(product.price) * onPageCount);
-
+       let productsInCart = JSON.parse(localStorage.getItem("productsInCart"));
+       Object.keys(productsInCart).forEach(function(productKey){
+            let currentProduct = productsInCart[productKey];
+            totalCartCost += currentProduct.inCart * currentProduct.price; 
+       });
+       localStorage.setItem("totalCost", totalCartCost);
     } else {
-        localStorage.setItem("totalCost", parseInt(product.price));
+        totalCartCost = parseInt(product.price) * onPageCount;
+        localStorage.setItem("totalCost", totalCartCost);
     }
+
+    document.getElementById("totalCostElement").innerHTML="$ " + totalCartCost.toLocaleString();
+};
+
+function updateCartItemQuantity(product) {
+
+    let productsInCart = localStorage.getItem("productsInCart");
+    productsInCart = JSON.parse(productsInCart);
+
+    let productNumbers = localStorage.getItem("cartNumbers");
+    productNumbers = parseInt(productNumbers);
+    // console.log(productsInCart);
+
+    let inCartCount = product.inCart;
+    console.log( inCartCount);
+
+    let totalItemsCount = product.inCart;
+    if(productsInCart){
+        Object.keys(productsInCart).forEach(function(productKey){
+            if(productKey !== product.name){
+                totalItemsCount += productsInCart[productKey].inCart;
+            } 
+        })
+    }
+
+    document.getElementById("labelCartCount").textContent = totalItemsCount;
+    localStorage.setItem("cartNumbers", totalItemsCount);
+
+    productsInCart[product.name].inCart = product.inCart;    
+    localStorage.setItem("productsInCart", JSON.stringify(productsInCart));
+
+    totalCost(product);
 };
 
 function generateProductSection(productsList) {
@@ -249,8 +285,12 @@ function generateProductSection(productsList) {
     const productSection = document.querySelector(".productSection");
     customContainer1.innerHTML = "";
 
+    const urlQuery = window.location.search;
+    const urlParams = new URLSearchParams(urlQuery);
+    const productName = urlParams.get("product");
+    
     for (let i = 0; i < productsList.length; i++) {
-        if (productsList[i].name === "XX99 Mark I Headphones") {
+        if (productsList[i].name === productName) {
             const product = productsList[i];
             generateProductDetails(product, screenType);
             generateProductFeatures(product);
@@ -263,7 +303,7 @@ function generateProductSection(productsList) {
                 // inDeCrement();
                 cartNumbers(product);
                 totalCost(product);
-                // document.getElementById("count").textContent = "0";
+                document.getElementById("count").textContent = "0";
             });
         };
     };
@@ -287,6 +327,7 @@ function generateCart() {
 
     if (cartProductsObj) {
         const productsList = Object.values(cartProductsObj);
+        // console.log(productsList);
 
         const cartNumbersString = localStorage.getItem("cartNumbers");
         const totalItemsInCart = JSON.parse(cartNumbersString);
@@ -321,9 +362,9 @@ function generateCart() {
         cartBody.classList.add("cartBody");
         cart.appendChild(cartBody);
 
-        const cartNumbers = document.createElement("div");
-        cartNumbers.classList.add("cartNumbers");
-        cart.appendChild(cartNumbers);
+        const cartNumbersDiv = document.createElement("div");
+        cartNumbersDiv.classList.add("cartNumbers");
+        cart.appendChild(cartNumbersDiv);
 
         for (let i = 0; i < productsList.length; i++) {
             const product = productsList[i];
@@ -358,10 +399,10 @@ function generateCart() {
             minusButton.classList.add("plusMinusButton");
             plusMinus.appendChild(minusButton);
 
-            const count = document.createElement("span");
-            count.textContent = product.inCart;
-            count.setAttribute("id", "count");
-            plusMinus.appendChild(count);
+            const countInCart = document.createElement("span");
+            countInCart.textContent = product.inCart;
+            countInCart.setAttribute("id", "countInCart");
+            plusMinus.appendChild(countInCart);
 
             const plusButton = document.createElement("button");
             plusButton.textContent = "+";
@@ -369,15 +410,27 @@ function generateCart() {
             plusMinus.appendChild(plusButton);
             cartBody.appendChild(cartItem);
 
+            plusButton.addEventListener('click', function () {
+                plusOrMinus('plus', countInCart, product);
+                updateCartItemQuantity(product);
+            });
+            minusButton.addEventListener('click', function () {
+                plusOrMinus('minus', countInCart, product);
+                updateCartItemQuantity(product);
+
+            })
+
         }
+
 
         const par3 = document.createElement("p");
         par3.textContent = "TOTAL"
-        cartNumbers.appendChild(par3);
+        cartNumbersDiv.appendChild(par3);
 
         const cartH61 = document.createElement("h6");
+        cartH61.id="totalCostElement";
         cartH61.textContent = "$ " + cartTotalCost.toLocaleString();
-        cartNumbers.appendChild(cartH61);
+        cartNumbersDiv.appendChild(cartH61);
 
         const buttonB1 = document.createElement("button");
         buttonB1.textContent = "Checkout";
@@ -400,8 +453,12 @@ function generateCart() {
         console.log("No item in cart")
     }
 };
+
 const body = document.querySelector("body");
 const cartOpen = document.getElementById("cartOpen");
+const plusButton = document.querySelector(".plusButton");
+const minusButton = document.querySelector(".minusButton");
+const countSpan = document.getElementById('count');
 
 // console.log(cartOpen);
 
@@ -414,11 +471,9 @@ cartOpen.addEventListener("click", () => {
     }
 });
 
-const plusButton = document.querySelector(".plusButton");
-const minusButton = document.querySelector(".minusButton");
 
-function plusOrMinus(operation) {
-    const countSpan = document.getElementById('count');
+
+function plusOrMinus(operation, countSpan, product) {
     const countText = countSpan.textContent;
     const count = parseInt(countText);
 
@@ -432,13 +487,16 @@ function plusOrMinus(operation) {
         }
     }
     countSpan.textContent = showCount;
+    if(product){
+        product.inCart = showCount;
+    }
 };
 
 plusButton.addEventListener('click', function () {
-    plusOrMinus('plus');
+    plusOrMinus('plus', countSpan);
 });
 minusButton.addEventListener('click', function () {
-    plusOrMinus('minus');
+    plusOrMinus('minus', countSpan);
 })
 
 
