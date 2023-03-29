@@ -1,47 +1,51 @@
 const categoriesProductsString = localStorage.getItem("categoriesProducts");
 const categoriesProducts = JSON.parse(categoriesProductsString);
+// console.log(categoriesProducts);
 
 const urlQuery = window.location.search;
 const urlParams = new URLSearchParams(urlQuery);
-const productName = urlParams.get("product");
+const categoryName = urlParams.get("category");
 
-// console.log(productName);
-
+// console.log(categoryName);
 let categoryProducts;
 
 if (categoriesProducts) {
     // debugger
     Object.keys(categoriesProducts).forEach(function (categoryKey) {
-        if (productName.includes(categoryKey)) {
+        if (categoryKey === categoryName) {
             // console.log("test");
             categoryProducts = categoriesProducts[categoryKey];
         }
     });
 }
-
 // console.log(categoryProducts);
 
-const productSection = document.querySelector(".productSection");
+const categoryNameOnPage = document.querySelector(".categoryNameOnPage");
+categoryNameOnPage.innerHTML = categoryName;
+// console.log(categoryNameOnPage);
+
+const categorySection = document.querySelector(".categoryProducts");
 // console.log(productSection);
 
-const customContainer1 = document.createElement("div");
-customContainer1.classList.add("customContainer");
-productSection.appendChild(customContainer1);
+const customContainer2 = document.createElement("div");
+customContainer2.classList.add("customContainer");
+categorySection.appendChild(customContainer2);
 
-function generateProductDetails(product, screenType) {
-    const productDetails = document.createElement("div");
-    productDetails.classList.add("productDetails");
-    customContainer1.appendChild(productDetails);
+function generateCategoryProductL(product, screenType) {
+
+    const categoryProduct = document.createElement("div");
+    categoryProduct.classList.add("categoryProduct");
+    customContainer2.appendChild(categoryProduct);
 
     const productImg = document.createElement("img");
-    const productImgPath = "assets/" + product.longName + "/" + screenType + "/image-product.jpg";
+    const productImgPath = "assets/" + product.longName + "/" + screenType + "/image-category-page-preview.jpg";
     productImg.setAttribute("src", productImgPath);
     productImg.setAttribute("alt", product.name);
-    productDetails.appendChild(productImg);
+    categoryProduct.appendChild(productImg);
 
     const productDescription = document.createElement("div");
     productDescription.classList.add("productDescription");
-    productDetails.appendChild(productDescription);
+    categoryProduct.appendChild(productDescription);
 
     if (product.new == true) {
         const productP1 = document.createElement("p");
@@ -57,123 +61,156 @@ function generateProductDetails(product, screenType) {
     productP2.textContent = product.description;
     productDescription.appendChild(productP2);
 
-    const productH6 = document.createElement("h6");
-    productH6.textContent = "$ " + product.price;
-    productDescription.appendChild(productH6);
-
-    const buttonsDiv = document.createElement("div");
-    buttonsDiv.classList.add("buttonsDiv");
-    productDescription.appendChild(buttonsDiv);
-
-    const plusMinus = document.createElement("div");
-    plusMinus.classList.add("plusMinus");
-    buttonsDiv.appendChild(plusMinus);
-
-    const minusButton = document.createElement("button");
-    minusButton.textContent = "-";
-    minusButton.classList.add("plusMinusButton");
-    minusButton.classList.add("minusButton");
-    // minusButton.setAttribute("onclick", "decrement()")
-    plusMinus.appendChild(minusButton);
-
-    const count = document.createElement("span");
-    count.textContent = "1";
-    count.setAttribute("id", "count");
-    plusMinus.appendChild(count);
-
-    const plusButton = document.createElement("button");
-    plusButton.textContent = "+";
-    plusButton.classList.add("plusMinusButton");
-    plusButton.classList.add("plusButton");
-    // minusButton.setAttribute("onclick", "decrement()")
-    plusMinus.appendChild(plusButton);
-
-
-    const addToCartBtn = document.createElement("button");
-    addToCartBtn.textContent = "Add to cart";
-    addToCartBtn.classList.add("B1");
-    addToCartBtn.classList.add("addToCart");
-    buttonsDiv.appendChild(addToCartBtn);
+    const productButton2 = document.createElement("button");
+    productButton2.addEventListener("click", function () {
+        var url = new URL(window.location.origin + "/product.html");
+        url.searchParams.set("product", product.name);
+        window.location.href = url.href;
+    });
+    productButton2.textContent = "See product";
+    productButton2.classList.add("B1");
+    productDescription.appendChild(productButton2);
 
 };
 
-function generateProductFeatures(product) {
+function generateCategoryProductR(product, screenType) {
 
-    const productFeatures = document.createElement("div");
-    productFeatures.classList.add("productFeatures");
-    customContainer1.appendChild(productFeatures);
+    const categoryProduct = document.createElement("div");
+    categoryProduct.classList.add("categoryProduct");
+    customContainer2.appendChild(categoryProduct);
 
-    const featuresDiv = document.createElement("div");
-    featuresDiv.classList.add("features");
-    productFeatures.appendChild(featuresDiv);
+    const productDescription = document.createElement("div");
+    productDescription.classList.add("productDescription");
+    categoryProduct.appendChild(productDescription);
 
-    const productH3 = document.createElement("h3");
-    productH3.textContent = "Features";
-    featuresDiv.appendChild(productH3);
-
-    const productP3 = document.createElement("p");
-    productP3.innerHTML = product.features;
-    featuresDiv.appendChild(productP3);
-
-    const intheboxDiv = document.createElement("div");
-    intheboxDiv.classList.add("inthebox");
-    productFeatures.appendChild(intheboxDiv);
-
-    const productH31 = document.createElement("h3");
-    productH31.textContent = "In the box";
-    intheboxDiv.appendChild(productH31);
-
-    const productP4 = document.createElement("p");
-    const sentenceList = product.items;
-
-    for (let key in sentenceList) {
-        const span = document.createElement("span");
-        const words = sentenceList[key].split(" ");
-        span.textContent = words[0];
-        span.classList.add("highlight");
-        const restOfSentence = words.slice(1).join(" ");
-        const text = document.createTextNode("\u2003" + restOfSentence);
-        const br = document.createElement("br");
-
-        productP4.appendChild(span);
-        productP4.appendChild(text);
-        productP4.appendChild(br);
+    if (product.new == true) {
+        const productP1 = document.createElement("p");
+        productP1.textContent = "New product";
+        productP1.classList.add("overlineOrange");
+        productDescription.appendChild(productP1);
     };
+    const productH2 = document.createElement("h2");
+    productH2.textContent = product.name;
+    productDescription.appendChild(productH2);
 
-    intheboxDiv.appendChild(productP4);
+    const productP2 = document.createElement("p");
+    productP2.textContent = product.description;
+    productDescription.appendChild(productP2);
 
-};
+    const productButton2 = document.createElement("button");
+    productButton2.addEventListener("click", function () {
+        var url = new URL(window.location.origin + "/product.html");
+        url.searchParams.set("product", product.name);
+        // debugger
+        window.location.href = url.href;
+    });
+    productButton2.textContent = "See product";
+    productButton2.classList.add("B1");
+    productDescription.appendChild(productButton2);
 
-function generateProductGallery(product, screenType) {
-
-    const productImages = document.createElement("div");
-    productImages.classList.add("productImages");
-    customContainer1.appendChild(productImages);
-
-    const bundleImagesDiv = document.createElement("div");
-    bundleImagesDiv.classList.add("bundleImages");
-    productImages.appendChild(bundleImagesDiv);
-
-    const productGalleryImg1 = document.createElement("img");
-    const productImg1Path = "assets/" + product.longName + "/" + screenType + "/image-gallery-1.jpg";
-    productGalleryImg1.setAttribute("src", productImg1Path);
-    productGalleryImg1.setAttribute("alt", product.name);
-    bundleImagesDiv.appendChild(productGalleryImg1);
-
-    const productGalleryImg2 = document.createElement("img");
-    const productImg2Path = "assets/" + product.longName + "/" + screenType + "/image-gallery-2.jpg";
-    productGalleryImg2.setAttribute("src", productImg2Path);
-    productGalleryImg2.setAttribute("alt", product.name);
-    bundleImagesDiv.appendChild(productGalleryImg2);
-
-    const productGalleryImg3 = document.createElement("img");
-    const productImg3Path = "assets/" + product.longName + "/" + screenType + "/image-gallery-3.jpg";
-    productGalleryImg3.setAttribute("src", productImg3Path);
-    productGalleryImg3.setAttribute("alt", product.name);
-    productImages.appendChild(productGalleryImg3);
-
+    const productImg = document.createElement("img");
+    const productImgPath = "assets/" + product.longName + "/" + screenType + "/image-category-page-preview.jpg";
+    productImg.setAttribute("src", productImgPath);
+    productImg.setAttribute("alt", product.name);
+    categoryProduct.appendChild(productImg);
 
 };
+
+const maxNoProducts = 3;
+
+function generateCategorySection(indexStart, productsList) {
+
+    let pageWidth = window.innerWidth;
+    // console.log(pageWidth);
+    let screenType = "";
+
+    if (pageWidth <= 375) {
+        screenType = "mobile";
+    } else if (pageWidth > 375 && pageWidth <= 768) {
+        screenType = "tablet";
+    } else if (pageWidth > 768) {
+        screenType = "desktop";
+    }
+    // console.log(screenType);
+    // console.log(pageWidth);    
+
+    const categorySection = document.querySelector(".categoryProducts");
+    customContainer2.innerHTML = "";
+
+    for (let i = indexStart; i < indexStart + maxNoProducts && i < productsList.length; i++) {
+        if (i % 2 == 0) {
+            generateCategoryProductL(productsList[i], screenType);
+        } else {
+            generateCategoryProductR(productsList[i], screenType);
+        }
+    }
+};
+
+
+// re-creeam lista cand utilizatorul face resize la screen
+window.addEventListener('resize', () => {
+    generateCategorySection(0, categoryProducts);
+    generatePagination(categoryProducts);
+}, false)
+
+
+function generatePagination(list) {
+
+    const paginationDiv = document.createElement("div");
+    paginationDiv.classList.add("pagination");
+    customContainer2.appendChild(paginationDiv);
+
+    const ul = document.createElement("ul");
+    const numberOfPages = Math.ceil(list.length / maxNoProducts);
+
+    for (let i = 0; i < numberOfPages; i++) {
+        const li = document.createElement("li");
+        li.textContent = i + 1;
+        ul.appendChild(li);
+    }
+
+    ul.addEventListener("click", (e) => {
+        const pageNumber = e.target.textContent;
+        if (pageNumber.length === 1) {
+            const pageNumberInt = parseInt(pageNumber);
+            const startIndex = (pageNumberInt - 1) * maxNoProducts;
+            pageNumber
+            // console.log(pageNumber);
+            generateCategorySection(startIndex, list);
+            generatePagination(list);
+        }
+
+
+    })
+
+    paginationDiv.appendChild(ul);
+
+}
+
+generateCategorySection(0, categoryProducts);
+generatePagination(categoryProducts);
+
+const categAnchors = document.querySelectorAll(".categAnchor");
+//  console.log(categAnchors);
+
+categAnchors.forEach(categAnchor => {
+    categAnchor.addEventListener("click", function (event) {
+        // debugger
+        event.preventDefault();
+        var url = new URL(window.location.origin + "/category.html");
+        if (categAnchor.textContent !== "Shop") {
+            url.searchParams.set("category", categAnchor.textContent);
+        } else {
+            const categName = categAnchor.previousElementSibling.textContent;
+            url.searchParams.set("category", categName);
+        };
+        window.location.href = url.href;
+    });
+});
+
+/* ====================== Cart display ====================== */
+
+onLoadCartNumbers();
 
 function cartNumbers(product) {
     // console.log("The product clicked is:" , product);
@@ -238,7 +275,7 @@ function totalCost(product) {
     // console.log("The product price is" , product.price);
     let cartCost = localStorage.getItem("totalCost");
 
-    let onPageCount = parseInt(document.getElementById("count").textContent);
+    // let onPageCount = parseInt(document.getElementById("count").textContent);
     let totalCartCost = 0;
     if (cartCost != null) {
         let productsInCart = JSON.parse(localStorage.getItem("productsInCart"));
@@ -284,60 +321,6 @@ function updateCartItemQuantity(product) {
 
     totalCost(product);
 };
-
-function generateProductSection(productsList) {
-
-    let pageWidth = window.innerWidth;
-    // console.log(pageWidth);
-    let screenType = "";
-
-    if (pageWidth <= 375) {
-        screenType = "mobile";
-    } else if (pageWidth > 375 && pageWidth <= 768) {
-        screenType = "tablet";
-    } else if (pageWidth > 768) {
-        screenType = "desktop";
-    }
-    // console.log(screenType);
-    // console.log(pageWidth);    
-
-    const productSection = document.querySelector(".productSection");
-    customContainer1.innerHTML = "";
-
-    const urlQuery = window.location.search;
-    const urlParams = new URLSearchParams(urlQuery);
-    const productName = urlParams.get("product");
-
-    for (let i = 0; i < productsList.length; i++) {
-        if (productsList[i].name === productName) {
-            const product = productsList[i];
-            generateProductDetails(product, screenType);
-            generateProductFeatures(product);
-            generateProductGallery(product, screenType);
-
-            // add to Cart functionality
-            const addToCartBtn = document.querySelector(".addToCart");
-            addToCartBtn.addEventListener("click", () => {
-                // console.log("Added to cart")
-                // inDeCrement();
-                cartNumbers(product);
-                totalCost(product);
-                document.getElementById("count").textContent = "0";
-            });
-        };
-    };
-};
-
-// re-creeam lista cand utilizatorul face resize la screen
-window.addEventListener('resize', () => {
-    generateProductSection(categoryProducts);
-}, false)
-
-generateProductSection(categoryProducts);
-onLoadCartNumbers();
-
-
-/* ====================== Cart display ====================== */
 
 function generateCart() {
     // console.log("running");
@@ -473,13 +456,11 @@ function generateCart() {
     }
 };
 
-const body = document.querySelector("body");
 const cartOpen = document.getElementById("cartOpen");
+const body = document.querySelector("body");
 const plusButton = document.querySelector(".plusButton");
 const minusButton = document.querySelector(".minusButton");
 const countSpan = document.getElementById('count');
-
-// console.log(cartOpen);
 
 cartOpen.addEventListener("click", () => {
     const cartSection = generateCart();
@@ -489,8 +470,6 @@ cartOpen.addEventListener("click", () => {
         console.log("No item in cart");
     }
 });
-
-
 
 function plusOrMinus(operation, countSpan, product) {
     const countText = countSpan.textContent;
@@ -510,44 +489,3 @@ function plusOrMinus(operation, countSpan, product) {
         product.inCart = showCount;
     }
 };
-
-plusButton.addEventListener('click', function () {
-    plusOrMinus('plus', countSpan);
-});
-minusButton.addEventListener('click', function () {
-    plusOrMinus('minus', countSpan);
-})
-
-const categAnchors = document.querySelectorAll(".categAnchor");
-//  console.log(categAnchors);
-categAnchors.forEach(categAnchor => {
-    categAnchor.addEventListener("click", function (event) {
-        // debugger
-        event.preventDefault();
-        var url = new URL(window.location.origin + "/category.html");
-        if (categAnchor.textContent !== "Shop") {
-            url.searchParams.set("category", categAnchor.textContent);
-        } else {
-            const categName = categAnchor.previousElementSibling.textContent;
-            url.searchParams.set("category", categName);
-        };
-        window.location.href = url.href;
-    });
-});
-
-const seeProductButtons = document.querySelectorAll(".seeProduct");
-seeProductButtons.forEach(seeProduct => {
-    seeProduct.addEventListener("click", function (event) {
-        event.preventDefault();
-        var url = new URL(window.location.origin + "/product.html");
-        const productName = seeProduct.previousElementSibling.textContent;
-        url.searchParams.set("product", productName);
-        window.location.href = url.href;
-    });
-});
-
-
-
-
-
-

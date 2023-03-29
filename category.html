@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/main.css">
-    <script type="module" src="scripts/headphones.js"></script>
+    <script type="module" src="scripts/category.js"></script>
+    <script type="module" src="scripts/login.js"></script>
     <title>Headphones</title>
 </head>
 
@@ -19,14 +20,15 @@
                 </a>
                 <nav>
                     <ul>
-                        <li><a href="#" class="subtitleWhite">Home</a></li>
-                        <li><a href="#" class="subtitleWhite">Headphones</a></li>
-                        <li><a href="#" class="subtitleWhite">Speakers</a></li>
-                        <li><a href="#" class="subtitleWhite">Earphones</a></li>
+                        <li><a href="/home.html" class="subtitleWhite">Home</a></li>
+                        <li><a href="#" class="subtitleWhite categAnchor">Headphones</a></li>
+                        <li><a href="#" class="subtitleWhite categAnchor">Speakers</a></li>
+                        <li><a href="#" class="subtitleWhite categAnchor">Earphones</a></li>
                     </ul>
                 </nav>
                 <div class="headerButtons">
-                    <button id="cart" class="B5">
+                    <span id="labelCartCount">0</span>
+                    <button id="cartOpen" class="B5">
                         <img src="assets/shared/desktop/icon-cart.svg" alt="Cart">
                     </button>
                     <button id="loginOpen" class="B5">
@@ -34,7 +36,7 @@
                     </button>
                 </div>
             </header>
-            <h2>Headphones</h2>
+            <h2 class="categoryNameOnPage"></h2>
         </div>
     </section>
     <section class="categoryProducts">
@@ -82,19 +84,19 @@
             <div class="category">
                 <img src="assets/shared/desktop/image-category-thumbnail-headphones.png" alt="Headphones">
                 <h6>Headphones</h6>
-                <button class="B3">Shop</button>
+                <button class="B3 categAnchor">Shop</button>
                 <div class="background"></div>
             </div>
             <div class="category">
                 <img src="assets/shared/desktop/image-category-thumbnail-speakers.png" alt="Speakers">
                 <h6>Speakers</h6>
-                <button class="B3">Shop</button>
+                <button class="B3 categAnchor">Shop</button>
                 <div class="background"></div>
             </div>
             <div class="category">
                 <img src="assets/shared/desktop/image-category-thumbnail-earphones.png" alt="Earphones">
                 <h6>Earphones</h6>
-                <button class="B3">Shop</button>
+                <button class="B3 categAnchor">Shop</button>
                 <div class="background"></div>
             </div>
         </div>
@@ -122,10 +124,10 @@
                 </a>
                 <nav>
                     <ul>
-                        <li><a href="#" class="subtitleWhite">Home</a></li>
-                        <li><a href="#" class="subtitleWhite">Headphones</a></li>
-                        <li><a href="#" class="subtitleWhite">Speakers</a></li>
-                        <li><a href="#" class="subtitleWhite">Earphones</a></li>
+                        <li><a href="/home.html" class="subtitleWhite">Home</a></li>
+                        <li><a href="#" class="subtitleWhite categAnchor">Headphones</a></li>
+                        <li><a href="#" class="subtitleWhite categAnchor">Speakers</a></li>
+                        <li><a href="#" class="subtitleWhite categAnchor">Earphones</a></li>
                     </ul>
                 </nav>
             </footer>

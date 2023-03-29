@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/main.css">
     <script type="module" src="scripts/home.js"></script>
-    <script type="module" src="login.html"></script>
+    <script type="module" src="scripts/login.js"></script>
     <title>Document</title>
 </head>
 
@@ -20,14 +20,15 @@
                 </a>
                 <nav>
                     <ul>
-                        <li><a href="#" class="subtitleWhite">Home</a></li>
-                        <li><a href="#" class="subtitleWhite">Headphones</a></li>
-                        <li><a href="#" class="subtitleWhite">Speakers</a></li>
-                        <li><a href="#" class="subtitleWhite">Earphones</a></li>
+                        <li><a href="/home.html" class="subtitleWhite">Home</a></li>
+                        <li><a href="#" class="subtitleWhite categAnchor">Headphones</a></li>
+                        <li><a href="#" class="subtitleWhite categAnchor">Speakers</a></li>
+                        <li><a href="#" class="subtitleWhite categAnchor">Earphones</a></li>
                     </ul>
                 </nav>
                 <div class="headerButtons">
-                    <button id="cart" class="B5">
+                    <span id="labelCartCount">0</span>
+                    <button id="cartOpen" class="B5">
                         <img src="assets/shared/desktop/icon-cart.svg" alt="Cart">
                     </button>
                     <button id="loginOpen" class="B5">
@@ -40,7 +41,7 @@
                 <h1>XX99 Mark II Headphones</h1>
                 <p>Experience natural, lifelike audio and exceptional build quality made for the passionate music
                     enthusiast.</p>
-                <button class="B1">See product</button>
+                <button class="B1 seeProduct">See product</button>
             </div>
         </div>
     </section>
@@ -49,19 +50,19 @@
             <div class="category">
                 <img src="assets/shared/desktop/image-category-thumbnail-headphones.png" alt="Headphones">
                 <h6>Headphones</h6>
-                <button class="B3">Shop</button>
+                <button class="B3 categAnchor">Shop</button>
                 <div class="background"></div>
             </div>
             <div class="category">
                 <img src="assets/shared/desktop/image-category-thumbnail-speakers.png" alt="Speakers">
                 <h6>Speakers</h6>
-                <button class="B3">Shop</button>
+                <button class="B3 categAnchor">Shop</button>
                 <div class="background"></div>
             </div>
             <div class="category">
                 <img src="assets/shared/desktop/image-category-thumbnail-earphones.png" alt="Earphones">
                 <h6>Earphones</h6>
-                <button class="B3">Shop</button>
+                <button class="B3 categAnchor">Shop</button>
                 <div class="background"></div>
             </div>
         </div>
@@ -71,23 +72,23 @@
             <div class="productZX9">
                 <img src="assets/home/desktop/image-speaker-zx9.png" alt="ZX9">
                 <div class="productDescription">
-                    <h1>ZX9 Speaker</h1>
+                    <h1>ZX9 Speakers</h1>
                     <p>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-                    <button class="B4">See product</button>
+                    <button class="B4 seeProduct">See product</button>
                 </div>
             </div>
             <div class="productZX7">
                 <img src="assets/home/desktop/image-speaker-zx7.jpg" alt="ZX7">
                 <div class="productDescription">
-                    <h4>ZX7 Speaker</h4>
-                    <button class="B2">See product</button>
+                    <h4>ZX7 Speakers</h4>
+                    <button class="B2 seeProduct">See product</button>
                 </div>
             </div>
             <div class="productYX1">
                 <img src="assets/home/desktop/image-earphones-yx1.jpg" alt="YX1">
                 <div class="productDescription">
-                    <h4>YX1 Earphones</h4>
-                    <button class="B2">See product</button>
+                    <h4>YX1 Wireless Earphones</h4>
+                    <button class="B2 seeProduct">See product</button>
                 </div>
             </div>
         </div>
@@ -109,15 +110,15 @@
         <div class="customContainer">
             <div class="line"></div>
             <footer>
-                <a href="#">
+                <a href="/home.html">
                     <img src="assets/shared/desktop/logo.svg" alt="Logo">
                 </a>
                 <nav>
                     <ul>
-                        <li><a href="#" class="subtitleWhite">Home</a></li>
-                        <li><a href="#" class="subtitleWhite">Headphones</a></li>
-                        <li><a href="#" class="subtitleWhite">Speakers</a></li>
-                        <li><a href="#" class="subtitleWhite">Earphones</a></li>
+                        <li><a href="/home.html" class="subtitleWhite">Home</a></li>
+                        <li><a href="#" class="subtitleWhite categAnchor">Headphones</a></li>
+                        <li><a href="#" class="subtitleWhite categAnchor">Speakers</a></li>
+                        <li><a href="#" class="subtitleWhite categAnchor">Earphones</a></li>
                     </ul>
                 </nav>
             </footer>

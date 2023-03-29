@@ -1,171 +1,318 @@
-function generateLogin() {
-    const loginSection = document.createElement("section");
-    loginSection.classList.add("loginSection");
+const categAnchors = document.querySelectorAll(".categAnchor");
+//  console.log(categAnchors);
 
-    const login = document.createElement("div");
-    login.classList.add("login_signup");
-    loginSection.appendChild(login);
+categAnchors.forEach(categAnchor => {
+    categAnchor.addEventListener("click", function (event) {
+        // debugger
+        event.preventDefault();
+        var url = new URL(window.location.origin + "/category.html");
+        if (categAnchor.textContent !== "Shop") {
+            url.searchParams.set("category", categAnchor.textContent);
+        } else {
+            const categName = categAnchor.previousElementSibling.textContent;
+            url.searchParams.set("category", categName);
+        };
+        window.location.href = url.href;
+    });
+});
 
-    const loginH3 = document.createElement("h3");
-    loginH3.textContent = "Sign In";
-    login.appendChild(loginH3);
+const seeProductButtons = document.querySelectorAll(".seeProduct");
+// console.log(seeProductButtons);
 
-    const loginForm = document.createElement("form");
-    loginForm.setAttribute("action", "");
-    login.appendChild(loginForm);
+seeProductButtons.forEach(seeProduct => {
+    seeProduct.addEventListener("click", function (event) {
+        // debugger
+        event.preventDefault();
+        var url = new URL(window.location.origin + "/product.html");
 
-    const emailDiv = document.createElement("div");
-    emailDiv.classList.add("textItem");
-    loginForm.appendChild(emailDiv);
+        const hParentNode = seeProduct.parentNode;
+        const hNodesText = hParentNode.querySelector("h1, h4").textContent;
 
-    const emailLabel = document.createElement("label");
-    emailLabel.textContent = "E-mail";
-    emailLabel.setAttribute("for", "email");
-    emailDiv.appendChild(emailLabel);
+        url.searchParams.set("product", hNodesText);
+        window.location.href = url.href;
+    });
+});
 
-    const emailInput = document.createElement("input");
-    emailInput.setAttribute("type", "email");
-    emailInput.setAttribute("name", "email");
-    emailInput.setAttribute("id", "email");
-    emailInput.required = true;
-    emailDiv.appendChild(emailInput);
 
-    const passwordDiv = document.createElement("div");
-    passwordDiv.classList.add("textItem");
-    loginForm.appendChild(passwordDiv);
+function generateCart() {
+    // console.log("running");
+    const cartProductsString = localStorage.getItem("productsInCart");
+    const cartProductsObj = JSON.parse(cartProductsString);
 
-    const passwordLabel = document.createElement("label");
-    passwordLabel.textContent = "Password";
-    passwordLabel.setAttribute("for", "password");
-    passwordDiv.appendChild(passwordLabel);
+    if (cartProductsObj) {
+        const productsList = Object.values(cartProductsObj);
+        // console.log(productsList);
 
-    const passwordInput = document.createElement("input");
-    passwordInput.setAttribute("type", "password");
-    passwordInput.setAttribute("name", "password");
-    passwordInput.setAttribute("id", "password");
-    passwordInput.required = true;
-    passwordDiv.appendChild(passwordInput);
+        const cartNumbersString = localStorage.getItem("cartNumbers");
+        const totalItemsInCart = JSON.parse(cartNumbersString);
 
-    const signInButton = document.createElement("button");
-    signInButton.textContent = "Sign In";
-    signInButton.classList.add("B4");
-    loginForm.appendChild(signInButton);
+        const totalCostString = localStorage.getItem("totalCost");
+        const cartTotalCost = JSON.parse(totalCostString);
 
-    const par1 = document.createElement("p");
-    par1.textContent = "Don't have an account? ";
-    login.appendChild(par1);
+        const cartSection = document.createElement("section");
+        cartSection.classList.add("cartSection");
 
-    const loginAnchor = document.createElement("a");
-    loginAnchor.textContent = "Sign Up";
-    loginAnchor.setAttribute("href", "#");
-    par1.appendChild(loginAnchor);
+        // Cart header
 
-    // Sign up side
-    const signUp = document.createElement("div");
-    signUp.classList.add("login_signup");
-    signUp.classList.add("signUp");
-    loginSection.appendChild(signUp);
+        const cart = document.createElement("div");
+        cart.classList.add("cart");
+        cartSection.appendChild(cart);
 
-    const signUpH3 = document.createElement("h3");
-    signUpH3.textContent = "Sign Up";
-    signUp.appendChild(signUpH3);
+        const cartHeader = document.createElement("div");
+        cartHeader.classList.add("cartHeader");
+        cart.appendChild(cartHeader);
 
-    const signUpForm = document.createElement("form");
-    signUpForm.setAttribute("action", "");
-    signUp.appendChild(signUpForm);
+        const cartH6 = document.createElement("h6");
+        cartH6.innerHTML = "Cart (" + totalItemsInCart + ")";
+        cartHeader.appendChild(cartH6);
 
-    const signUpEmailDiv = document.createElement("div");
-    signUpEmailDiv.classList.add("textItem");
-    signUpForm.appendChild(signUpEmailDiv);
+        const removeCartItems = document.createElement("button");
+        removeCartItems.textContent = "Remove all";
+        removeCartItems.setAttribute("id", "removeCartItems")
+        cartHeader.appendChild(removeCartItems);
 
-    const signUpEmailLabel = document.createElement("label");
-    signUpEmailLabel.textContent = "E-mail";
-    signUpEmailLabel.setAttribute("for", "signUpEmail");
-    signUpEmailDiv.appendChild(signUpEmailLabel);
+        // Cart body
+        const cartBody = document.createElement("div");
+        cartBody.classList.add("cartBody");
+        cart.appendChild(cartBody);
 
-    const signUpEmailInput = document.createElement("input");
-    signUpEmailInput.setAttribute("type", "email");
-    signUpEmailInput.setAttribute("name", "signUpEmail");
-    signUpEmailInput.setAttribute("id", "signUpEmail");
-    signUpEmailInput.required = true;
-    signUpEmailDiv.appendChild(signUpEmailInput);
+        const cartNumbersDiv = document.createElement("div");
+        cartNumbersDiv.classList.add("cartNumbers");
+        cart.appendChild(cartNumbersDiv);
 
-    const signUpPasswordDiv = document.createElement("div");
-    signUpPasswordDiv.classList.add("textItem");
-    signUpForm.appendChild(signUpPasswordDiv);
+        for (let i = 0; i < productsList.length; i++) {
+            const product = productsList[i];
 
-    const signUpPasswordLabel = document.createElement("label");
-    signUpPasswordLabel.textContent = "Password";
-    signUpPasswordLabel.setAttribute("for", "signUpPassword");
-    signUpPasswordDiv.appendChild(signUpPasswordLabel);
+            const cartItem = document.createElement("div");
+            cartItem.classList.add("cartItem");
+            const cartItemImg = document.createElement("img");
+            cartItemImg.setAttribute("src", "assets/" + product.longName + "/desktop/image-product.jpg");
+            cartItemImg.setAttribute("alt", product.name);
+            cartItem.appendChild(cartItemImg);
 
-    const signUpPasswordInput = document.createElement("input");
-    signUpPasswordInput.setAttribute("type", "password");
-    signUpPasswordInput.setAttribute("name", "signUpPassword");
-    signUpPasswordInput.setAttribute("id", "signUpPassword");
-    signUpPasswordInput.required = true;
-    signUpPasswordDiv.appendChild(signUpPasswordInput);
+            const namePlusPriceDiv = document.createElement("div");
+            namePlusPriceDiv.classList.add("namePlusPrice");
+            cartItem.appendChild(namePlusPriceDiv);
 
-    const signUpButton = document.createElement("button");
-    signUpButton.textContent = "Sign UP";
-    signUpButton.classList.add("B4");
-    signUpForm.appendChild(signUpButton);
+            const par1 = document.createElement("p");
+            const lastSpaceIndex = product.name.lastIndexOf(" ");
+            const shortName = product.name.substring(0, lastSpaceIndex);
+            par1.textContent = shortName
+            namePlusPriceDiv.appendChild(par1);
 
-    const par2 = document.createElement("p");
-    par2.textContent = "Already have an account? ";
-    signUp.appendChild(par2);
+            const par2 = document.createElement("p");
+            par2.textContent = "$ " + product.price;
+            namePlusPriceDiv.appendChild(par2);
 
-    const signUpAnchor = document.createElement("a");
-    signUpAnchor.textContent = " Sign In";
-    signUpAnchor.setAttribute("href", "#");
-    par2.appendChild(signUpAnchor);
+            const plusMinus = document.createElement("div");
+            plusMinus.classList.add("plusMinus");
+            cartItem.appendChild(plusMinus);
 
-    signUpAnchor.addEventListener("click", ()=>{
-        loginSide.style.left = "50%";
-        loginSide.style.borderRadius = "0 8px 8px 0";
-        loginSide.style.transition = "left 1s";
-    })
+            const minusButton = document.createElement("button");
+            minusButton.textContent = "-";
+            minusButton.classList.add("plusMinusButton");
+            plusMinus.appendChild(minusButton);
 
-    // login Side DIV
-    const loginSide = document.createElement("div");
-    loginSide.classList.add("loginSide");
-    loginSection.appendChild(loginSide);
+            const countInCart = document.createElement("span");
+            countInCart.textContent = product.inCart;
+            countInCart.setAttribute("id", "countInCart");
+            plusMinus.appendChild(countInCart);
 
-    const loginClose = document.createElement("button");
-    loginClose.classList.add("B5");
-    loginClose.setAttribute("id", "loginClose");
-    loginSection.appendChild(loginClose);
+            const plusButton = document.createElement("button");
+            plusButton.textContent = "+";
+            plusButton.classList.add("plusMinusButton");
+            plusMinus.appendChild(plusButton);
+            cartBody.appendChild(cartItem);
 
-    const loginCloseImg = document.createElement("img");
-    loginCloseImg.setAttribute("src", "assets/shared/desktop/Dell_fill.svg");
-    loginCloseImg.setAttribute("alt", "Account Icon");
-    loginClose.appendChild(loginCloseImg);
+            plusButton.addEventListener('click', function () {
+                plusOrMinus('plus', countInCart, product);
+                updateCartItemQuantity(product);
+            });
+            minusButton.addEventListener('click', function () {
+                plusOrMinus('minus', countInCart, product);
+                updateCartItemQuantity(product);
 
-    const divOverlay = document.createElement("div");
-    divOverlay.classList.add("popupOverlay");
-    body.appendChild(divOverlay);
+            })
 
-    loginClose.addEventListener("click", () => {
-        if (loginSection) {
-            loginSection.remove();
-            divOverlay.remove();
         }
-    })
 
-    loginAnchor.addEventListener("click", ()=>{
-        loginSide.style.left = "0";
-        loginSide.style.borderRadius = "8px 0 0 8px";
-        loginSide.style.transition = "left 1s";
-    })
 
-    return loginSection;
+        const par3 = document.createElement("p");
+        par3.textContent = "TOTAL"
+        cartNumbersDiv.appendChild(par3);
+
+        const cartH61 = document.createElement("h6");
+        cartH61.id = "totalCostElement";
+        cartH61.textContent = "$ " + cartTotalCost.toLocaleString();
+        cartNumbersDiv.appendChild(cartH61);
+
+        const buttonB1 = document.createElement("button");
+        buttonB1.textContent = "Checkout";
+        buttonB1.classList.add("B1");
+        cart.appendChild(buttonB1);
+
+        const divOverlay = document.createElement("div");
+        divOverlay.classList.add("popupOverlay");
+        body.appendChild(divOverlay);
+
+        divOverlay.addEventListener("click", () => {
+            if (cartSection) {
+                cartSection.remove();
+                divOverlay.remove();
+            }
+        })
+
+        return cartSection;
+    } else {
+        console.log("No item in cart")
+    }
 };
 
-const loginOpen = document.getElementById("loginOpen");
 const body = document.querySelector("body");
+const cartOpen = document.getElementById("cartOpen");
+const plusButton = document.querySelector(".plusButton");
+const minusButton = document.querySelector(".minusButton");
+const countSpan = document.getElementById('count');
 
-loginOpen.addEventListener("click", () => {
+// console.log(cartOpen);
 
-    const loginSection = generateLogin();
-    body.appendChild(loginSection);
+cartOpen.addEventListener("click", () => {
+    const cartSection = generateCart();
+    if (cartSection) {
+        body.appendChild(cartSection);
+    } else {
+        console.log("No item in cart");
+    }
 });
+
+
+onLoadCartNumbers();
+
+function cartNumbers(product) {
+    // console.log("The product clicked is:" , product);
+    let productNumbers = localStorage.getItem("cartNumbers");
+    productNumbers = parseInt(productNumbers);
+
+    let onPageCount = parseInt(document.getElementById("count").textContent);
+    console.log(onPageCount);
+
+    if (productNumbers) {
+        localStorage.setItem("cartNumbers", productNumbers + onPageCount);
+        document.getElementById("labelCartCount").textContent = productNumbers + onPageCount;
+    } else {
+        localStorage.setItem("cartNumbers", onPageCount);
+        document.getElementById("labelCartCount").textContent = onPageCount;
+    }
+
+    setItems(product);
+};
+
+function onLoadCartNumbers() {
+    let productNumbers = localStorage.getItem("cartNumbers");
+
+    if (productNumbers) {
+        document.getElementById("labelCartCount").textContent = productNumbers;
+    }
+};
+
+function setItems(product) {
+    let cartItems = localStorage.getItem("productsInCart");
+    cartItems = JSON.parse(cartItems);
+    // console.log("My cart items are:", cartItems)
+
+    let onPageCount = parseInt(document.getElementById("count").textContent);
+
+    const { id, name, longName, price, inCart } = product;
+    const newObject = { id, name, longName, price, inCart };
+
+    if (cartItems != null) {
+        if (cartItems[product.name] == undefined) {
+            cartItems = {
+                ...cartItems,
+                [product.name]: newObject
+            }
+        }
+        cartItems[product.name].inCart += onPageCount;
+    } else {
+        product.inCart = onPageCount;
+
+        const { id, name, longName, price, inCart } = product;
+        const newObject = { id, name, longName, price, inCart };
+
+        cartItems = {
+            [product.name]: newObject
+        }
+    }
+
+    localStorage.setItem("productsInCart", JSON.stringify(cartItems));
+};
+
+function totalCost(product) {
+    // console.log("The product price is" , product.price);
+    let cartCost = localStorage.getItem("totalCost");
+
+    // let onPageCount = parseInt(document.getElementById("count").textContent);
+    let totalCartCost = 0;
+    if (cartCost != null) {
+        let productsInCart = JSON.parse(localStorage.getItem("productsInCart"));
+        Object.keys(productsInCart).forEach(function (productKey) {
+            let currentProduct = productsInCart[productKey];
+            totalCartCost += currentProduct.inCart * currentProduct.price;
+        });
+        localStorage.setItem("totalCost", totalCartCost);
+    } else {
+        totalCartCost = parseInt(product.price) * onPageCount;
+        localStorage.setItem("totalCost", totalCartCost);
+    }
+
+    document.getElementById("totalCostElement").innerHTML = "$ " + totalCartCost.toLocaleString();
+};
+
+function updateCartItemQuantity(product) {
+
+    let productsInCart = localStorage.getItem("productsInCart");
+    productsInCart = JSON.parse(productsInCart);
+
+    let productNumbers = localStorage.getItem("cartNumbers");
+    productNumbers = parseInt(productNumbers);
+    // console.log(productsInCart);
+
+    let inCartCount = product.inCart;
+    console.log(inCartCount);
+
+    let totalItemsCount = product.inCart;
+    if (productsInCart) {
+        Object.keys(productsInCart).forEach(function (productKey) {
+            if (productKey !== product.name) {
+                totalItemsCount += productsInCart[productKey].inCart;
+            }
+        })
+    }
+
+    document.getElementById("labelCartCount").textContent = totalItemsCount;
+    localStorage.setItem("cartNumbers", totalItemsCount);
+
+    productsInCart[product.name].inCart = product.inCart;
+    localStorage.setItem("productsInCart", JSON.stringify(productsInCart));
+
+    totalCost(product);
+};
+
+function plusOrMinus(operation, countSpan, product) {
+    const countText = countSpan.textContent;
+    const count = parseInt(countText);
+
+    let showCount = 0;
+
+    if (operation === 'plus') {
+        showCount = count + 1;
+    } else {
+        if (count > 1) {
+            showCount = count - 1;
+        }
+    }
+    countSpan.textContent = showCount;
+    if (product) {
+        product.inCart = showCount;
+    }
+};

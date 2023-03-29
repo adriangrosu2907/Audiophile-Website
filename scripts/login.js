@@ -109,6 +109,10 @@ function generateLogin() {
     const signUpButton = document.createElement("button");
     signUpButton.textContent = "Sign UP";
     signUpButton.classList.add("B4");
+    signUpButton.addEventListener("click", function(event){
+        event.preventDefault();
+        signUp();
+    })
     signUpForm.appendChild(signUpButton);
 
     const par2 = document.createElement("p");
@@ -169,3 +173,34 @@ loginOpen.addEventListener("click", () => {
     const loginSection = generateLogin();
     body.appendChild(loginSection);
 });
+
+function login() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+  
+    var savedUsername = localStorage.getItem(username);
+    var savedPassword = localStorage.getItem(password);
+  
+    if (savedUsername === null || savedPassword === null) {
+      alert("Invalid username or password!");
+    } else if (username === savedUsername && password === savedPassword) {
+      alert("Login successful!");
+    } else {
+      alert("Invalid username or password!");
+    }
+  }
+
+  function signup() {
+    var newUsername = document.getElementById("signUpEmail").value;
+    var newPassword = document.getElementById("signUpPassword").value;
+  
+    var savedUsername = localStorage.getItem(newUsername);
+  
+    if (savedUsername !== null) {
+      alert("Username already exists!");
+    } else {
+      localStorage.setItem(newUsername, newPassword);
+      alert("Sign up successful!");
+    }
+  }
+
